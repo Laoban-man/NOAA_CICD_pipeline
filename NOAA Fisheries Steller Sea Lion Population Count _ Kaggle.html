@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/data?select=KaggleNOAASeaLions.7z -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>NOAA Fisheries Steller Sea Lion Population Count | Kaggle</title>
+  
+    <meta name="robots" content="index, follow">
+  <meta name="description" content="How many sea lions do you see?">
+  <meta name="turbolinks-cache-control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC">
+  <script type="text/javascript" async="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/js" nonce=""></script><script src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/cb=gapi.loaded_0" nonce="" async=""></script><script type="text/javascript" async="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/analytics.js" nonce=""></script><script nonce="" type="text/javascript">
+    window["pageRequestStartTime"] = 1659645237667;
+    window["pageRequestEndTime"] = 1659645237795;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous"><link rel="preconnect" href="https://stats.g.doubleclick.net/"><link rel="preconnect" href="https://storage.googleapis.com/"><link rel="preconnect" href="https://apis.google.com/">
+  <link href="https://www.kaggle.com/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="manifest" href="https://www.kaggle.com/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/icon" rel="preload" as="style">
+  <link href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/css" rel="preload" as="style">
+  <link href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/icon" rel="stylesheet" media="all" id="async-google-font-1">
+  <link href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/css" rel="stylesheet" media="all" id="async-google-font-2">
+  <script nonce="" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/vendor.css">
+    <link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/app.css">
+  
+    
+ 
+      <script nonce="">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script><style></style>
+    <script nonce="">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Competitions'
+        });
+    </script>
+    <script nonce="" async="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/js(1)"></script>
+
+  
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@kaggle">
+        <meta name="twitter:creator" content="@NOAA">
+    <meta name="og:url" content="https://kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count">
+    <meta name="og:title" content="NOAA Fisheries Steller Sea Lion Population Count">
+    <meta name="og:description" content="How many sea lions do you see?">
+    <meta name="og:image" content="https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/thumb76_76.png">
+
+
+  <meta name="twitter:site" content="@Kaggle"> 
+  
+    
+
+  
+    
+
+  
+    
+    
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 1658527,
+        userProfileUrl: '/nmroux',
+        userDisplayNameEscaped: 'nmroux',
+        userThumbnailUrl: 'https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png',
+        userEmailEscaped: 'nicolasmichaelroux@googlemail.com',
+        userIsPhoneVerified: true,
+        userName: 'nmroux',
+        tier: 'Novice',
+        antiForgeryToken: 'CfDJ8J3M_yAX7KFLocPnRStQF56b31_y-PJj7ipMwaOjSup2HY1Tbpxbt6xCnJScr3KqAb2Ym4ZTug2x3wjg4k3SB1G6HZ1TZXwq6BW7qYFbCdRf29k2BBx27b14CciB31JateoE6o7i9a533HXEPlbDQbk',
+        isAnonymous: false,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTk2NDYxMzcsIlVzZXJJZCI6MTY1ODUyN30.WMF5A0iQG8Vq2FnD844SLtVLCtLIhwFhL4vbaVQt2zA',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        registeredTimestamp: 1519291252,
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    const decodeUserProperty = function (escapedUserProperty) {
+        escapedUserProperty = escapedUserProperty || "";
+        try {
+            const textVersion = new DOMParser().parseFromString(escapedUserProperty, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserProperty;
+    }
+    Kaggle.Current.userDisplayName = decodeUserProperty(Kaggle.Current.userDisplayNameEscaped);
+    Kaggle.Current.userEmail = decodeUserProperty(Kaggle.Current.userEmailEscaped); 
+</script>
+
+    
+
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/api.js" defer="" async="" gapi_processed="true"></script>
+  <script nonce="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/runtime.js" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/vendor.js" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/app.js" data-turbolinks-track="reload"></script>
+    <script nonce="" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '1658527'
+      }
+    </script>
+<link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/4606.bc7f679bc3d04ae71dfb.css"><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/1193.8e0b67968a3a679b633f.css"><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/2775.e8ca841c64ac70e7f2ab.css"><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/2610.7c41b8b3938abeb0c58f.css"><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/competitionContainer.c257e663d1bd162658ee.css"><style data-styled="active" data-styled-version="5.3.5"></style><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/4.eb7da2142c921d28b772.css"><link rel="stylesheet" type="text/css" href="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/15.0ee55c723b2d8ac67383.css"><style data-react-tooltip="true">.__react_component_tooltip {
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+}
+.__react_component_tooltip.allow_hover, .__react_component_tooltip.allow_click {
+  pointer-events: auto;
+}
+.__react_component_tooltip::before, .__react_component_tooltip::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.__react_component_tooltip.show {
+  opacity: 0.9;
+  margin-top: 0;
+  margin-left: 0;
+  visibility: visible;
+}
+.__react_component_tooltip.place-top::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-bottom::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-left::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-right::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  left: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip .multi-line {
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+}</style></head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"><div style="--mdc-theme-on-primary:#fff; --mdc-theme-on-surface:rgba(0, 0, 0, 0.87); --mdc-theme-text-primary-on-background:rgba(0, 0, 0, 0.87); --mdc-theme-text-secondary-on-background:rgba(0, 0, 0, 0.54); --mdc-theme-text-hint-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-disabled-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-icon-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-primary:#20BEFF; --mdc-theme-error:#F58B8A; --mdc-theme-background:#F8F8F8; --mdc-theme-surface:#fff; --mdc-theme-primary-bg:#20BEFF; --mdc-theme-secondary-bg:#919294;"><div class="sc-djUGQo sc-igHpSv cHNBlV fePepS"><div class="sc-IIEeM kQWLGf"><div class="sc-eXBvqI kcMyo"><div class="sc-iFwKgL kkmsVD"><button aria-label="menu" class="sc-jSMfEi bWdumZ undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/data?select=KaggleNOAASeaLions.7z#site-content" class="sc-fmrZth fPIrjc">Skip to<br>content</a><div class="sc-iqGgem clzILw"><a href="https://www.kaggle.com/"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/site-logo.svg" alt="Kaggle" class="sc-gkJlnC esSEyq"></a></div></div></div><div class="sc-gGnURB hIvUYM"><button class="sc-jhzXDd dDoqRk"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 30L20 16L16 20L16 30L20 30Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M20 20L30 20L30 16L20 16L20 20Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M16 20L20 16L15.937 16L6 16L6 20L16 20Z" fill="#20BEFF"></path><rect x="20" y="16" width="4" height="10" transform="rotate(-180 20 16)" fill="#20BEFF"></rect></svg><span class="sc-ezWOiH sc-bZkfAO sc-hjQCSK fuNBHd kxbrKq eIFgLm">Create</span></button><div aria-hidden="true" class="mdc-menu sc-hNKHps jcYbTn sc-bSakgD iCjPcr mdc-menu-surface" style="transform-origin: left top; left: 0px; top: 0px; max-height: 855px;"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-gITdmR jTHIvj mdc-ripple-upgraded sc-gITdmR jTHIvj mdc-list-item"><div class="sc-fIavCj DfIAO"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-evrZIY elCeHP">code</i><p class="sc-cxabCf sc-llJcti bGyNSd hMXWEN">New Notebook</p></div></div><div role="menuitem" tabindex="0" class="sc-gITdmR jTHIvj mdc-ripple-upgraded sc-gITdmR jTHIvj mdc-list-item"><div class="sc-fIavCj DfIAO"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-evrZIY elCeHP">table_chart</i><p class="sc-cxabCf sc-llJcti bGyNSd hMXWEN">New Dataset</p></div></div><div role="menuitem" tabindex="0" class="sc-gITdmR jTHIvj mdc-ripple-upgraded sc-gITdmR jTHIvj mdc-list-item"><div class="sc-fIavCj DfIAO"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-evrZIY elCeHP">emoji_events</i><p class="sc-cxabCf sc-llJcti bGyNSd hMXWEN">New Competition</p></div></div></div></div></div><div class="sc-iuStju rttCO"><div class="sc-ddcaxn iKbBvT"><div class="sc-iXxrte iVtRHC"><div class="sc-hZgfyJ gKkLoc"><div class="sc-cwpsFg fMYhIW"><div class="sc-cLFqLo ivNXjb"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-afnQL CGesW">search</i><input placeholder="Search" aria-label="Search" class="sc-iJkHyd fZfYDG" value=""></div></div></div><ul class="km-list"><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">explore</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Home</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs ezKwHr sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/competitions"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-jmnVvD bZOpRG">emoji_events</i><p class="sc-bBrHrO sc-ivTmOn gdFqSP DPcjy" style="padding-left: 20px;">Competitions</p><div class="sc-jvLaUc jNdnYH"></div></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/datasets"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">table_chart</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Datasets</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">code</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Code</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/discussion"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">comment</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Discussions</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/learn"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">school</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Courses</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/data?select=KaggleNOAASeaLions.7z#"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">expand_more</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">More</p></a></div></li></ul></div><div><div class="sc-djvmMF bMCEov sc-cjbZfG iRKfNz"></div><ul style="padding-bottom: 36px;"><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-edUIhV dDKwOm"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/nmroux"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-jmnVvD bZOpRG">note_alt</i><p class="sc-bBrHrO sc-ivTmOn dsQgUo DPcjy" style="padding-left: 20px;">Your Work</p></a></div></li><li><ul class="km-list km-list--dense sc-kItwNn eZkXHh"><li tabindex="0" class="sc-lbxAil bibdZV"><div class="sc-iNWwEs hBdoQq sc-ktCSKO brmWqV"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ">arrow_drop_down</i><span class="sc-iAvgwm sc-efBctP sc-gYMRRK wGfIk grWqRX gWrVa-d">Recently Viewed</span></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/thumb76_76.png" alt="NOAA Fisheries Steller Sea Lion Population Count" width="20" height="20" class="sc-gDeeJ ipMXPL"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">NOAA Fisheries Steller Sea Lion Population Count</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/learn/advanced-sql?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/advanced-sql.svg" alt="Advanced SQL" width="20" height="20" class="sc-gDeeJ ipMXPL"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Advanced SQL</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/alexisbcook/analytic-functions?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/2603295-kg.jpg" alt="Analytic Functions" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Analytic Functions</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/alexisbcook/joins-and-unions?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/2603295-kg.jpg" alt="JOINs and UNIONs" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">JOINs and UNIONs</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/alexisbcook/writing-efficient-queries?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/2603295-kg.jpg" alt="Writing Efficient Queries" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Writing Efficient Queries</p></a></div></li></ul></li><li><ul class="km-list km-list--dense sc-kItwNn eZkXHh"><li tabindex="0" class="sc-lbxAil bibdZV"><div class="sc-iNWwEs hBdoQq sc-ktCSKO brmWqV"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ">arrow_drop_down</i><span class="sc-iAvgwm sc-efBctP sc-gYMRRK wGfIk grWqRX gWrVa-d">Recently Edited</span></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/nmroux/exercise-writing-efficient-queries?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/default-thumb.png" alt="Exercise: Writing Efficient Queries" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Exercise: Writing Efficient Queries</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/nmroux/exercise-nested-and-repeated-data?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/default-thumb.png" alt="Exercise: Nested and Repeated Data" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Exercise: Nested and Repeated Data</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/nmroux/exercise-analytic-functions?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/default-thumb.png" alt="Exercise: Analytic Functions" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Exercise: Analytic Functions</p></a></div></li><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-bGWzfD iDSMqx"><a class="sc-ehmTmK hHEGzd" href="https://www.kaggle.com/code/nmroux/exercise-joins-and-unions?rvi=1"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/default-thumb.png" alt="Exercise: JOINs and UNIONs" width="20" height="20" class="sc-gDeeJ cTLlZn"><p class="sc-cxabCf sc-llJcti sc-fytwQQ ieLZFa hMXWEN bcggcV">Exercise: JOINs and UNIONs</p></a></div></li></ul></li><li></li></ul></div></div><div class="sc-egNfGp gbfhXx"><div class="mdc-menu-surface--anchor"><button class="sc-fmGnzW cYfndy"><div class="sc-hgZZql ioTANj"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-fjqEFS eKHDTL">auto_awesome_motion</i><div color="#FAE041" class="sc-lgVVsH kaNBLZ">0</div></div><p class="sc-bBrHrO sc-ivTmOn sc-jclSIp dsQgUo DPcjy esHGpt">View Active Events</p></button></div></div></div></div><div class="sc-iWajrY iTKQGi"><div class="sc-jKDlA-D fbCqmF"><div class="sc-eXBvqI kcMyo"><div class="sc-iFwKgL kkmsVD"><button aria-label="menu" class="sc-jSMfEi bWdumZ undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/data?select=KaggleNOAASeaLions.7z#site-content" class="sc-fmrZth fPIrjc">Skip to<br>content</a><div class="sc-iqGgem clzILw"><a href="https://www.kaggle.com/"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/site-logo.svg" alt="Kaggle" class="sc-gkJlnC esSEyq"></a></div></div></div><div class="sc-dkSuNL cVBhyO"><div class="sc-gJwTLC dYWknm"><div class="sc-cwpsFg fMYhIW"><div class="sc-cLFqLo ivNXjb"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf kqAYoQ sc-afnQL CGesW">search</i><input placeholder="Search" aria-label="Search" class="sc-iJkHyd fZfYDG" value=""></div></div></div><div class="sc-fxvKuh cyvvCb"><div class="sc-hsOonA dmJzCf"><div class="sc-caXVBt jRydZd"><div class="sc-ESujJ ekZBqE"><a class="sc-cOFTSb hqEvqh sc-dUWWNf gkbNCI" aria-label="nmroux"><div size="24" title="nmroux" class="sc-BeQoi iASIuP" style="background-image: url(&quot;https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png&quot;);"></div><svg width="32" height="32" viewBox="0 0 32 32"><circle r="15" cx="16" cy="16" fill="none" stroke-width="2" style="stroke: rgb(241, 243, 244);"></circle><path d="M 30.265847744427305 11.36474508437579 A 15 15 0 0 0 16 1" fill="none" stroke-width="2" style="stroke: rgb(28, 205, 118);"></path></svg></a></div></div></div></div></div></div><div data-testid="searchContainer" class="sc-eCDnqH kMPEcE"><div></div><div class="sc-keNpes ldYBGj"><div></div></div></div><div id="site-content" class="sc-itUGML hAkhML"><div class="sc-DdwlG jpKEPu"></div><div id="site-body" class="">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"competitionId":6116,"competitionType":"COMPETITION_TYPE_PREDICTION","competitionTitle":"NOAA Fisheries Steller Sea Lion Population Count","briefDescription":"How many sea lions do you see?","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/header.png","organizationId":22,"organizationName":"NOAA","organizationThumbnailUrl":"https://storage.googleapis.com/kaggle-organizations/22/thumbnail.jpg%3Fr=167","hasAcceptedRules":true,"dateEnabled":"2017-03-27T21:10:25.543Z","deadline":"2017-06-27T23:59:00Z","mergerDeadline":"2017-06-20T23:59:00Z","newEntrantDeadline":"2017-06-20T23:59:00Z","rewardQuantity":25000,"rewardTypeName":"USD","totalTeams":385,"hostSegment":"HOST_SEGMENT_FEATURED","rules":{"id":16472,"postId":61205,"content":"\u003Cul\u003E\r\n\u003Cli\u003EPretrained models can be used in this competition, provided that they are posted in the official discussion thread before the competition entry deadline.\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003C!-- Begin Base Rules --\u003E\r\n\u003Ch3\u003EOne account per participant\u003C/h3\u003E\r\n\u003Cp\u003EYou cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.\u003C/p\u003E\r\n\u003Ch3\u003ENo private sharing outside teams\u003C/h3\u003E\r\n\u003Cp\u003EPrivately sharing code or data outside of teams is not permitted. It\u0027s okay to share code if made available to all participants on the forums.\u003C/p\u003E\r\n\u003Ch3\u003ETeam Mergers\u003C/h3\u003E\r\n\u003Cp\u003ETeam mergers are allowed and can be performed by the team leader. In order to merge, the combined team must have a total submission count less than or equal to the maximum allowed as of the merge date. The maximum allowed is the number of submissions per day multiplied by the number of days the competition has been running.\u003C/p\u003E\r\n\u003Ch3\u003ETeam Limits\u003C/h3\u003E\r\n\u003Cp\u003EThere is no maximum team size.\u003C/p\u003E\r\n\u003Ch3\u003ESubmission Limits\u003C/h3\u003E\r\n\u003Cp\u003EYou may submit a maximum of 5 entries per day.\u003C/p\u003E\r\n\u003Cp\u003EYou may select up to 2 final submissions for judging.\u003C/p\u003E\r\n\u003Ch3\u003ECompetition Timeline\u003C/h3\u003E\r\n\u003Cp\u003EStart Date: \u003Cstrong\u003ETBA\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EMerger Deadline: \u003Cstrong\u003E6/20/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EEntry Deadline: \u003Cstrong\u003E6/20/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EEnd Date: \u003Cstrong\u003E6/27/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003C!-- End Base Rules --\u003E\r\n\u003Ch3\u003ECOMPETITION-SPECIFIC TERMS\u003C/h3\u003E\r\n\u003Cp\u003ECOMPETITION NAME (the \u0027Competition\u0027): NOAA Fisheries Steller Sea Lion Population Count\u003C/p\u003E\r\n\u003Cp\u003ECOMPETITION SPONSOR: NOAA\u003C/p\u003E\r\n\u003Cp\u003ECOMPETITION WEBSITE: https://www.kaggle.com/c/noaa-fisheries-steller-sea-lion-population-count\u003C/p\u003E\r\n\u003Cp\u003EPRIZES: $25,000 total\u00A0\u003C/p\u003E\r\n\u003Cp\u003EWINNER LICENSE TYPE: Non-Exclusive License\u003C/p\u003E\r\n\u003Cp\u003EMAXIMUM TEAM SIZE: as listed above\u003C/p\u003E\r\n\u003Cp\u003EMAXIMUM SUBMISSIONS PER DAY: as listed above\u003C/p\u003E\r\n\u003Ch3\u003ECOMPETITION FRAMEWORK\u003C/h3\u003E\r\n\u003Cp\u003EThese are the complete, official rules for the Competition (the \u0027Competition Rules\u0027) and incorporate by reference the contents of the Competition Website listed above.\u003C/p\u003E\r\n\u003Cp\u003EBy downloading a dataset linked from the Competition Website, submitting an entry to this Competition, or joining a Team in this Competition, you are agreeing to be bound by these Competition Rules which constitute a binding agreement between you and the Competition Sponsor.\u003C/p\u003E\r\n\u003Cp\u003EThe Competition is sponsored by the Competition Sponsor listed above and hosted on the Sponsor\u0027s behalf by Kaggle Inc (\u0027Kaggle\u0027).\u003C/p\u003E\r\n\u003Cp\u003EThe Competition will run from Start Date to End Date as listed on the Competition Website. Note that Competition deadlines are subject to change and additional hurdle deadlines may be introduced during the Competition. Any additional or altered deadlines not already described in these Competition Rules will be publicized to the Participants via the Competition Website. It is the Participant\u0027s responsibility in this Competition to check the website regularly throughout the Competition to stay informed of any new or updated deadlines. Neither Kaggle nor Competition Sponsor are responsible for any Participant\u0027s failure to do so.\u003C/p\u003E\r\n\u003Cp\u003EEach registered individual or Team is referred to as a Participant. You may only participate using a single, unique Kaggle account registered at http://www.kaggle.com. Participating using more than one Kaggle account per individual Participant is a breach of these Competition Rules and Competition Sponsor reserves the right to disqualify any Participant (or Team including Participant) who is found to breach these Competition Rules.\u003C/p\u003E\r\n\u003Ch3\u003EELIGIBILITY\u003C/h3\u003E\r\n\u003Cp\u003EThe Competition is open to all individuals over the age of 18 at the time of entry and to all validly formed legal entities that have not declared or been declared in bankruptcy.\u003C/p\u003E\r\n\u003Cp\u003EOfficers, directors, employees and advisory board members (and their immediate families and members of the same household) of the Competition Sponsor, Kaggle and their respective affiliates, subsidiaries, contractors (with the express exception of Kaggle\u0027s authorized Kaggle Community Evangelists), agents, judges and advertising and promotion agencies are not eligible to participate in the Competition.\u003C/p\u003E\r\n\u003Cp\u003EYou are not eligible to receive any Prize in the Competition if you are a resident of a country designated by the United States Treasury\u2019s Office of Foreign Assets Control (see \u0026lt;http://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/default.aspx\u0026gt; for additional information).\u003C/p\u003E\r\n\u003Ch3\u003ESUBMISSIONS\u003C/h3\u003E\r\n\u003Cp\u003E\u0027Submission\u0027 means the material submitted by you in the manner and format specified on the Website via the Submission form on the Website. You (or if you are part of a Team, your Team) may submit up to the maximum number of Submissions per day as specified above. All Submissions must be uploaded to the Website in the manner and format specified on the Website. Submissions must be received prior to the Competition deadline and adhere to the guidelines for Submissions specified on the Website.\u003C/p\u003E\r\n\u003Cp\u003ESubmissions may not use or incorporate information from hand labeling or human prediction of the validation dataset or test data records.\u003C/p\u003E\r\n\u003Cp\u003EIf the Competition is a multi-stage Competition with temporally separate training data and/or leaderboard data, one or more valid Submissions must be made and selected during each stage of the Competition in the manner described on the Competition Website.\u003C/p\u003E\r\n\u003Ch3\u003EINTELLECTUAL PROPERTY\u003C/h3\u003E\r\n\u003Ch4\u003EDATA\u003C/h4\u003E\r\n\u003Cp\u003E\u0027Data\u0027 means the Data or Datasets linked from the Competition Website for the purpose of use by Participants in the Competition. For the avoidance of doubt, Data is deemed for the purpose of these Competition Rules to include any prototype or executable code provided to Participants by Kaggle or Competition Sponsor via the Website. Participants must use the Data only as permitted by these Competition Rules and any associated data use rules specified on the Competition Website.\u003C/p\u003E\r\n\u003Cp\u003EUnless otherwise permitted by the terms of the Competition Website, Participants must use the Data solely for the purpose and duration of the Competition, including but not limited to reading and learning from the Data, analyzing the Data, modifying the Data and generally preparing your Submission and any underlying models and participating in forum discussions on the Website. Participants agree to use suitable measures to prevent persons who have not formally agreed to these Competition Rules from gaining access to the Data and agree not to transmit, duplicate, publish, redistribute or otherwise provide or make available the Data to any party not participating in the Competition. Participants agree to notify Kaggle immediately upon learning of any possible unauthorized transmission or unauthorized access of the Data and agree to work with Kaggle to rectify any unauthorized transmission. Participants agree that participation in the Competition shall not be construed as having or being granted a license (expressly, by implication, estoppel, or otherwise) under, or any right of ownership in, any of the Data.\u003C/p\u003E\r\n\u003Ch4\u003EEXTERNAL DATA\u003C/h4\u003E\r\n\u003Cp\u003EUnless otherwise expressly stated on the Competition Website, Participants must not use data other than the Data to develop and test their models and Submissions. Competition Sponsor reserves the right in its sole discretion to disqualify any Participant who Competition Sponsor discovers has undertaken or attempted to undertake the use of data other than the Data, or who uses the Data other than as permitted according to the Competition Website and in these Competition Rules, in the course of the Competition.\u003C/p\u003E\r\n\u003Ch4\u003ECODE SHARING\u003C/h4\u003E\r\n\u003Cp\u003EParticipants are prohibited from privately sharing source or executable code developed in connection with or based upon the Data, and any such sharing is a breach of these Competition Rules and may result in disqualification.\u003C/p\u003E\r\n\u003Cp\u003EParticipants are permitted to publicly share source or executable code developed in connection with or based upon the Data, or otherwise relevant to the Competition, provided that such sharing does not violate the intellectual property rights of any third party. By so sharing, the sharing Participant is thereby deemed to have licensed the shared code under the MIT License (an open source software license commonly described at \u0026lt;http://opensource.org/licenses/MIT\u0026gt;).\u003C/p\u003E\r\n\u003Ch4\u003EOPEN-SOURCE CODE\u003C/h4\u003E\r\n\u003Cp\u003EA Submission will be ineligible to win a prize if it was developed using code containing or depending on software licensed under an open source license:\u003C/p\u003E\r\n\u003Cp\u003E* \u003Cem\u003Eother than\u003C/em\u003E an Open Source Initiative-approved license (see \u0026lt;http://opensource.org/\u0026gt;); or\u003Cbr /\u003E* an open source license that prohibits commercial use.\u003C/p\u003E\r\n\u003Ch3\u003EWINNING\u003C/h3\u003E\r\n\u003Ch4\u003EDETERMINING WINNERS\u003C/h4\u003E\r\n\u003Cp\u003EThis Competition is a challenge of skill and the final results are determined solely by leaderboard ranking on the private leaderboard (subject to compliance with these Competition Rules). Participants\u0027 scores and ranks on the Competition Website at any given stage of the Competition will be based on the evaluation metric described on the Competition Website, as determined by applying the predictions in the Submission to the ground truth of a validation dataset whose instances were a fixed set sampled from the Data.\u003C/p\u003E\r\n\u003Cp\u003EThe evaluation metric used for scoring and ranking Submissions will be displayed on the Competition Website.\u003C/p\u003E\r\n\u003Cp\u003EPrize awards are subject to verification of eligibility and compliance with these Competition Rules. All decisions of the Competition Sponsor and judges will be final and binding on all matters relating to this Competition. Competition Sponsor reserves the right to examine the Submission and any associated code or documentation for compliance with these Competition Rules. In the event that the Submission demonstrates a breach of these Competition Rules, Competition Sponsor may at its discretion take either of the following actions:\u003C/p\u003E\r\n\u003Cp\u003E* disqualify your Submission(s); or \u003Cbr /\u003E* require that you remediate within one week all issues identified in your Submission(s) (including, without limitation, the resolution of license conflicts, the fulfillment of all obligations required by software licenses, and the removal of any software that violates the software restrictions).\u003C/p\u003E\r\n\u003Ch4\u003ERESOLVING TIES\u003C/h4\u003E\r\n\u003Cp\u003EA tie between two or more valid and identically ranked submissions will be resolved in favour of the tied submission that was submitted first.\u003C/p\u003E\r\n\u003Ch4\u003EDECLINING PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EA Participant may decline to be nominated as a Winner by notifying Kaggle directly within one week following the Competition deadline, in which case the declining Participant forgoes any prize or other features associated with winning the Competition. Kaggle reserves the right to disqualify a Participant who so declines at Kaggle\u0027s sole discretion if Kaggle deems disqualification appropriate.\u003C/p\u003E\r\n\u003Ch3\u003EWINNERS\u0027 OBLIGATIONS\u003C/h3\u003E\r\n\u003Ch4\u003EDELIVERY \u0026amp; DOCUMENTATION\u003C/h4\u003E\r\n\u003Cp\u003EAs a condition of receipt of the Prize, the Prize winner must deliver the final model\u2019s software code as used to generate the winning Submission and associated documentation (consistent with the winning model documentation template available on the kaggle wiki at https://www.kaggle.com/wiki/WinningModelDocumentationTemplate) to the Competition Sponsor. The delivered software code must be capable of generating the winning Submission and contain a description of resources required to build and/or run the executable code successfully.\u003C/p\u003E\r\n\u003Cp\u003EIf a potential winning Participant or Team member is a U.S. citizen, potential winner must also sign and return an IRS W-9 form, or if a foreign resident, an IRS W-8BEN form, within the stated time in order to claim the prize.\u003C/p\u003E\r\n\u003Cp\u003EPotential winners will be disqualified and the prize may be awarded to an alternate winner (the next-ranked qualified Participant on the leaderboard) if\u003C/p\u003E\r\n\u003Cp\u003E* the required documentation is not returned within 14 days after receipt of any request to provide documentation;\u003Cbr /\u003E* prize notification letter/email or prize is returned as undeliverable; or\u003Cbr /\u003E* potential winner or winning Team member is disqualified for any reason.\u003C/p\u003E\r\n\u003Cp\u003EBy accepting any Prize, each Participant receiving a Prize thereby agrees to use of his/her name, address, likeness and/or Prize information by Kaggle and Competition Sponsor for promotional purposes in any medium without additional compensation.\u003C/p\u003E\r\n\u003Ch4\u003EPARTICIPANT INTELLECTUAL PROPERTY LICENSING\u003C/h4\u003E\r\n\u003Cp\u003EAs a further condition of receipt of a Prize, each winning Participant thereby licenses their winning Submission and the source code used to generate the Submission according to the Winner License Type specified above (note: if no Winner License Type is specified above, the Winner License Type is deemed to be Non-Exclusive License).\u003C/p\u003E\r\n\u003Ch5\u003EPUBLIC COMPETITIONS: NON-EXCLUSIVE LICENSE\u003C/h5\u003E\r\n\u003Cp\u003EIf the Winner License Type for the Competition (see Winner License Type above) is a Non-Exclusive License then each Winner by accepting a Prize thereby:\u003C/p\u003E\r\n\u003Cp\u003E* grants to Competition Sponsor and its designees a worldwide, non-exclusive, sub-licensable, transferable, fully paid-up, royalty-free, perpetual, irrevocable right to use, not use, reproduce, distribute, create derivative works of, publicly perform, publicly display, digitally perform, make, have made, sell, offer for sale and import their winning Submission and the source code used to generate the Submission, in any media now known or hereafter developed, for any purpose whatsoever, commercial or otherwise, without further approval by or payment to Participant; and\u003Cbr /\u003E* represents that he/she/it has the unrestricted right to grant that license.\u003C/p\u003E\r\n\u003Ch5\u003ERESEARCH COMPETITIONS: OPEN SOURCE LICENSE\u003C/h5\u003E\r\n\u003Cp\u003EIf the Winner License Type for the Competition (see Winner License Type above) is Open Source License, then each Winner by accepting a Prize thereby:\u003C/p\u003E\r\n\u003Cp\u003E* licenses their winning Submission and the source code used to generate the Submission under the MIT License (an open source software license commonly described at \u0026lt;http://opensource.org/licenses/MIT\u0026gt;), unless another open source license is chosen explicitly from the list of those approved by the\u00A0Open Source Initiative\u00A0at \u0026lt;http://opensource.org/licenses/\u0026gt;;\u00A0and\u003Cbr /\u003E* represents that he/she/it has the unrestricted right to grant that license.\u003C/p\u003E\r\n\u003Ch5\u003ERECRUITING COMPETITION SUBMISSION LICENSE GRANT\u003C/h5\u003E\r\n\u003Cp\u003EIf the Competition is classed above as a Recruiting Competition, Participant agrees to grant and hereby grants to Competition Sponsor a perpetual, irrevocable, worldwide, royalty-free, transferable, and sublicenseable right to use, review, reproduce, and internally distribute the Submission (including any and all submitted source code) in connection with evaluating Participant\u0027s suitability for employment, provided that the Submission licensed as set forth above will not be used for Competition Host\u2019s commercial purposes except as may otherwise be set forth in this Agreement.\u003C/p\u003E\r\n\u003Ch4\u003ECHEATING\u003C/h4\u003E\r\n\u003Cp\u003EParticipating using more than one Kaggle account is deemed cheating and, if discovered, will result in disqualification from the Competition and any other affected Competitions and may result in banning or deactivation of affected Kaggle accounts.\u003C/p\u003E\r\n\u003Ch4\u003ERECEIVING PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EAfter verification of eligibility, each Prize winner will receive the prize in the form of a check or wire transfer made out to the Prize winner (if an individual, or to the individual Team members if a Team). Allow 30 days from final confirmation for Prize delivery. Any winners who are U.S. citizens will receive an IRS 1099 form in the amount of their prize at the appropriate time. Prize winners are responsible for any taxes, fees or other liability resulting from their receipt of a Prize.\u003C/p\u003E\r\n\u003Ch3\u003ETEAMS\u003C/h3\u003E\r\n\u003Ch4\u003EFORMING A TEAM\u003C/h4\u003E\r\n\u003Cp\u003EMultiple individuals or entities may collaborate as a team (\u201CTeam\u201D). You may not participate on more than one Team. Each Team member must be a single individual operating a separate Kaggle account. You must register individually for the Competition before joining a Team. You must confirm your Team membership to make it official by responding to the Team notification message which will be sent to your Account.\u003C/p\u003E\r\n\u003Cp\u003ETeam membership may not exceed the Maximum Team Size.\u003C/p\u003E\r\n\u003Ch4\u003ETEAM MERGERS\u003C/h4\u003E\r\n\u003Cp\u003ETeams may be permitted to merge at Kaggle\u2019s discretion, so long as the merged Team meets all requirements in these Competition Rules. Kaggle will review any merger request and will either approve or reject the request within three business days. Merger requests may be rejected if the combined number of Entries made by the merging Teams exceeds the number of Entries permissible at the date of the merger request. Team merger requests will not be permitted within seven days of any deadline listed on the Competition Website.\u003C/p\u003E\r\n\u003Ch4\u003ETEAM PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EIf a Team wins a monetary Prize, Competition Sponsor will allocate the Prize money in even shares between the Team members unless the Team unanimously contacts Kaggle via the Competition Website within three business days following the Submission deadline to request an alternative prize distribution.\u003C/p\u003E\r\n\u003Ch3\u003EWARRANTIES AND OBLIGATIONS\u003C/h3\u003E\r\n\u003Ch4\u003EPARTICIPANT WARRANTIES AND OBLIGATIONS\u003C/h4\u003E\r\n\u003Cp\u003EBy registering, you agree that (a) your Account is complete, correct and accurate and (b) your registration may be rejected or terminated and all Entries submitted by you and/or your Team may be disqualified if any of the information in your Account is (or Competition Sponsor has reasonable grounds to believe it is) incomplete, incorrect or inaccurate. You are solely responsible for your Account. All registration information is deemed collected in the United States.\u003C/p\u003E\r\n\u003Cp\u003EParticipation is subject to all federal, state and local laws and regulations. Void where prohibited or restricted by law. You are responsible for checking applicable laws and regulations in your jurisdiction before participating in the Competition to make sure that your participation is legal. You are responsible for all taxes and reporting related to any award that you may receive as part of the Competition. You are responsible for abiding by your employer\u0027s policies regarding participation in the Competition. Competition Sponsor disclaims any and all liability or responsibility for disputes arising between you and your employer related to this Competition.\u003C/p\u003E\r\n\u003Cp\u003EEach Participant is solely responsible for all equipment, including but not necessarily limited to a computer and internet connection necessary to access the Website and to develop and upload any Submission, and any telephone, data, hosting or other service fees associated with such access, as well as all costs incurred by or behalf of the Entrant in participating in the Competition.\u003C/p\u003E\r\n\u003Cp\u003EBy entering a Submission, you represent and warrant that all information you enter on the Website is true and complete to the best of your knowledge, that you have the right and authority to make the Submission (including any underlying code and model) on your own behalf or on behalf of the persons and entities that you specify within the Submission, and that your Submission:\u003C/p\u003E\r\n\u003Cp\u003E* is your own original work, or is used by permission, in which case full and proper credit and identify is given and the third party contributions are clearly identified within your Submission;\u003Cbr /\u003E* does not contain confidential information or trade secrets and is not the subject of a registered patent or pending patent application;\u003Cbr /\u003E* does not violate or infringe upon the patent rights, industrial design rights, copyrights, trademarks, rights of privacy, publicity or other intellectual property or other rights of any person or entity;\u003Cbr /\u003E* does not contain malicious code, such as viruses, timebombs, cancelbots, worms, Trojan horses or other potentially harmful programs or other material or information; \u003Cbr /\u003E* does not and will not violate any applicable law, statute, ordinance, rule or regulation;\u003Cbr /\u003E* does not trigger any reporting or royalty obligation to any third party; and\u003Cbr /\u003E* was not previously published and has not won any other prize/award. \u003Cbr /\u003EA breach of any of these warranties will result in the corresponding Submission being invalid.\u003C/p\u003E\r\n\u003Ch4\u003ELIMITATION OF LIABILITY\u003C/h4\u003E\r\n\u003Cp\u003EBy participating in the Competition, each Participant agrees to release, indemnify and hold harmless Competition Sponsor, Kaggle, their respective affiliates, subsidiaries, advertising and promotions agencies, as applicable, and each of their respective agents, representatives, officers, directors, shareholders, and employees from and against any injuries, losses, damages, claims, actions and any liability of any kind resulting from or arising out of your participation in or association with the Competition. Competition Sponsor is not responsible for any miscommunications such as technical failures related to computer, telephone, cable, and unavailable network or server connections, related technical failures, or other failures related to hardware, software or virus, or incomplete, late or misdirected Submissions. Competition Sponsor reserves the right to cancel, modify or suspend the Competition should any computer virus, bug or other technical difficulty or other causes beyond the control of Competition Sponsor corrupt the administration, security or proper play of the Competition, and to determine winners from among Submission not affected by the corruption, if any, in its sole discretion.\u003C/p\u003E\r\n\u003Cp\u003ENeither Kaggle nor Competition Sponsor are responsible for (a) late, lost, stolen, damaged, garbled, incomplete, incorrect or misdirected Entries or other communications, (b) errors, omissions, interruptions, deletions, defects, or delays in operations or transmission of information, in each case whether arising by way of technical or other failures or malfunctions of computer hardware, software, communications devices, or transmission lines, or (c) data corruption, theft, destruction, unauthorized access to or alteration of Submission materials, loss or otherwise. Neither Kaggle nor Competition Sponsor are responsible for electronic communications or emails which are undeliverable as a result of any form of active or passive filtering of any kind, or insufficient space in any email account to receive email messages. Competition Sponsor disclaims any liability for damage to any computer system resulting from participation in, or accessing or downloading information in connection with, the Competition.\u003C/p\u003E\r\n\u003Ch4\u003ERESERVATION OF RIGHTS\u003C/h4\u003E\r\n\u003Cp\u003ECompetition Sponsor reserves the right to modify the Start Date, End Date, and the right to modify, add or remove additional Competition deadlines for any reason. Any changes will be communicated through the Competition Website. Competition Sponsor also reserves the right to modify, remove or add Data to the Website upon notice via the Competition Website. NEITHER KAGGLE NOR COMPETITION SPONSOR ARE RESPONSIBLE FOR ANY FAILURE OF A PARTICIPANT TO RECEIVE DATA CHANGES.\u003C/p\u003E\r\n\u003Ch3\u003EMISCELLANEOUS\u003C/h3\u003E\r\n\u003Ch4\u003ESEVERABILITY\u003C/h4\u003E\r\n\u003Cp\u003EThe invalidity or unenforceability of any provision of these Competition Rules shall not affect the validity or enforceability of any other provision. In the event that any provision is determined to be invalid or otherwise unenforceable or illegal, these Competition Rules shall otherwise remain in effect and be construed in accordance with their terms as if the invalid or illegal provision was not contained herein.\u003C/p\u003E\r\n\u003Ch4\u003ELAW\u003C/h4\u003E\r\n\u003Cp\u003EYou agree that these terms and the relationship between you and Competition Sponsor shall be governed by the laws of the State of California and the United States of America.\u003C/p\u003E","mimeType":"text/html","name":"rules"},"dataIntro":{"id":16468,"postId":61201,"content":"\u003Cp\u003EThe goal of this competition is to estimate the number of each type of sea lion in each one of the test images. The different types of sea lion are: adult males (also known as bulls), subadult males, adult females, juveniles, and pups.\u003C/p\u003E\r\n\u003Cp\u003EYour submission file should have the following format:\u003C/p\u003E\r\n\u003Cpre\u003Etest_id,adult_males,subadult_males,adult_females,juveniles,pups\u003Cbr /\u003E0,1,1,1,1,1\u003Cbr /\u003E1,1,1,1,1,1\u003Cbr /\u003E2,1,1,1,1,1\u003Cbr /\u003Eetc\u003C/pre\u003E\r\n\u003Cp\u003EYour submissions will be evaluated by their \u003Ca href=\u0022https://www.kaggle.com/wiki/RootMeanSquaredError\u0022\u003ERMSE\u003C/a\u003E\u00A0from the human-labelled ground truth, averaged over the columns.\u003C/p\u003E\r\n\u003Cp\u003EThe file KaggleNOAASeaLions.7z\u00A0is an encrypted 7-zip archive. An identical file is available\u00A0via BitTorrent.\u00A0\u003Cstrong\u003EPlease do not share the archive password.\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EThe archive contains the following items:\u003C/p\u003E\r\n\u003Cul\u003E\r\n\u003Cli\u003Esample_submission.csv: an example valid submission file\u003C/li\u003E\r\n\u003Cli\u003ETrain/*.jpg: a set of training images, with each filename corresponding to a train_id\u003C/li\u003E\r\n\u003Cli\u003ETrain/train.csv: a list of ground-truth counts for each train_id\u003C/li\u003E\r\n\u003Cli\u003ETrainDotted/*.jpg: copies of the training images with markings showing where each animal is (see below)\u003C/li\u003E\r\n\u003Cli\u003ETest/*.jpg: a set of test images, with each filename corresponding to a test_id\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003Cp\u003E\u003Ca href=\u0022https://www.kaggle.com/c/noaa-fisheries-steller-sea-lion-population-count/discussion/30895\u0022\u003EUpdate\u003C/a\u003E: some training images do not match their equivalents in TrainDotted. A list is posted in the MismatchedTrainImages.txt file.\u003C/p\u003E\r\n\u003Cp\u003EIn case\u00A0you\u0027re not ready to torrent the main competition data file, we\u0027ve added a small subset of the training data for you to get started on: TrainSmall2.7z. That archive contains the regular and dotted versions of training images 41\u00A0to 50, plus the sample submission file. (Update: this file replaces the original TrainSmall.7z, which included two images that did not match their TrainDotted versions correctly.)\u003C/p\u003E\r\n\u003Cp\u003EIn both the training set and the test set,\u00A0most images have regions that have been blacked out. Those redactions were added by human labelers to avoid double-counting. You can ignore any black regions when generating your predictions.\u003C/p\u003E\r\n\u003Cp\u003EAs an anti-cheating measure, Kaggle has added some extra images to the test set which will not be counted towards your score.\u003C/p\u003E\r\n\u003Cp\u003ETo assist you in locating\u00A0individual sea lions, the TrainDotted folder\u00A0contains the same images as in the Train folder, but with colored dots placed over the animals. The color scheme of the dots is:\u003C/p\u003E\r\n\u003Cul\u003E\r\n\u003Cli\u003Ered: adult males\u003C/li\u003E\r\n\u003Cli\u003Emagenta: subadult males\u003C/li\u003E\r\n\u003Cli\u003Ebrown: adult females\u003C/li\u003E\r\n\u003Cli\u003Eblue: juveniles\u003C/li\u003E\r\n\u003Cli\u003Egreen: pups\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003Cp\u003EAn example\u00A0image from the training set is reproduced\u00A0below.\u003C/p\u003E\r\n\u003Cp\u003EGood luck!\u003C/p\u003E\r\n\u003Cp\u003E\u003Cimg src=\u0022https://storage.googleapis.com/kaggle-competitions/kaggle/6116/media/example_noaa_image.jpg\u0022 alt=\u0022Example NOAA data image\u0022 width=\u0022800\u0022 height=\u0022618\u0022 /\u003E\u003C/p\u003E","mimeType":"text/html","name":"data"},"competitionSlug":"noaa-fisheries-steller-sea-lion-population-count","numPrizes":3,"leaderboardPercentage":12,"discussion":{"dataUrl":"/forums/2998/topics.json","id":2998,"subscription":"UNSUBSCRIBE","paramValues":{"page":1,"group":"TOPIC_LIST_GROUP_ALL","sortBy":"TOPIC_LIST_SORT_BY_ACTIVE","category":"TOPIC_LIST_CATEGORY_ALL"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/thumb76_76.png","newTopic":{"allowAttachments":true,"authorType":"TOPIC","forumId":2998,"parentName":"NOAA Fisheries Steller Sea Lion Population Count","parentUrl":"/competitions/noaa-fisheries-steller-sea-lion-population-count/discussion"},"numScoredSubmissions":2,"maxDailySubmissions":5,"maxDailySubmissionsResetDate":"2022-08-05T00:00:00Z","totalSolutionRows":0,"team":{"id":6203412,"name":"nmroux","members":[{"userId":1658527,"displayName":"nmroux","userUrl":"/nmroux","avatarUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isTeamLeader":true}]},"maxTeamSize":20,"totalCompetitors":463,"totalEntries":6015,"countsTowardsRanking":true,"countsTowardsTiers":true,"evaluationAlgorithm":{"id":24,"abbreviation":"MCRMSE","name":"Mean Columnwise Root Mean Squared Error","description":"Average of the RMSE of each column.","isPublic":true,"environmentRenderType":"ENVIRONMENT_RENDER_TYPE_JSON"},"allowPrivateLeaderboardDisplay":true,"pages":[{"id":16469,"postId":67885,"content":"\u003Cp\u003E\u003Cimg src=\u0022https://storage.googleapis.com/kaggle-competitions/kaggle/3333/media/noaa_sea_lions.png\u0022 alt=\u0022NOAA Stellar Sea Lions\u0022 style=\u0022float: right\u0022\u003E\u003C/p\u003E\n\u003Cp\u003ESteller sea lions in the western Aleutian Islands have declined 94 percent in the last 30 years. The endangered western population, found in the North Pacific, are the focus of conservation efforts which require annual population counts. Specially trained scientists at \u003Ca href=\u0022https://www.afsc.noaa.gov/\u0022 target=\u0022_blank\u0022\u003ENOAA Fisheries Alaska Fisheries Science Center\u003C/a\u003E conduct these surveys using airplanes and unoccupied aircraft systems to collect aerial images. Having accurate population estimates enables us to better understand factors that may be contributing to lack of recovery of Stellers in this area.\u003C/p\u003E\n\u003Cp\u003ECurrently, it takes biologists up to four months to count sea lions from the thousands of images NOAA Fisheries collects each year. Once individual counts are conducted, the tallies must be reconciled to confirm their reliability. The results of these counts are time-sensitive.\u003C/p\u003E\n\u003Cp\u003EIn this competition, Kagglers are invited to develop algorithms which accurately count the number of sea lions in aerial photographs. Automating the annual population count will free up critical resources allowing NOAA Fisheries to focus on ensuring we hear the sea lion\u2019s roar for many years to come. Plus, advancements in computer vision applied to aerial population counts may also greatly benefit other endangered species.\u003Cbr\u003E\f\u003C/p\u003E\n\u003Ch3\u003EResources\u003C/h3\u003E\n\u003Cp\u003ELearn more about research being done to better understand what\u0027s going on with the endangered Steller sea lion populations by joining scientists on a research vessel to the western Aleutian Islands in the video below.\u003C/p\u003E\n\u003Cp\u003E\u003C/p\u003E","mimeType":"text/html","name":"description","isPublished":true},{"id":16470,"postId":61203,"content":"\u003Cp\u003EThe aim of the competition is to count each type of steller sea lion in each photo. See the Data tab for more details.\u003C/p\u003E\n\u003Cp\u003EYour submission file should have the following format:\u003C/p\u003E\n\u003Cpre\u003Etest_id,adult_males,subadult_males,adult_females,juveniles,pups\u003Cbr\u003E0,1,1,1,1,1\u003Cbr\u003E1,1,1,1,1,1\u003Cbr\u003E2,1,1,1,1,1\u003Cbr\u003Eetc\u003C/pre\u003E\n\u003Cp\u003E\u003Cbr\u003EYour submissions will be evaluated by their \u003Ca href=\u0022https://www.kaggle.com/wiki/RootMeanSquaredError\u0022\u003ERMSE\u003C/a\u003E\u0026nbsp;from the human-labelled ground truth, averaged over the columns.\u003C/p\u003E","mimeType":"text/html","name":"evaluation","isPublished":true},{"id":16471,"postId":64628,"content":"\u003Cul\u003E\n\u003Cli\u003E1st place - $12,000\u003C/li\u003E\n\u003Cli\u003E2nd place - $8,000\u003C/li\u003E\n\u003Cli\u003E3rd place - $5,000\u003C/li\u003E\n\u003C/ul\u003E","mimeType":"text/html","name":"prizes","isPublished":true},{"id":16473,"postId":67527,"content":"\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 20, 2017\u003C/strong\u003E\u0026nbsp;-\u0026nbsp;Entry deadline. You must accept the competition rules before this date in order to compete.\u003C/li\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 20, 2017\u003C/strong\u003E\u0026nbsp;- Team Merger deadline. This is the last day participants\u0026nbsp;may join or merge teams.\u003C/li\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 27, 2017\u003C/strong\u003E\u0026nbsp;- Final submission deadline.\u003C/li\u003E\n\u003C/ul\u003E\n\u003Cp\u003EAll deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted. The competition organizers reserve the right to update the contest timeline if they deem it necessary.\u003C/p\u003E","mimeType":"text/html","name":"timeline","isPublished":true}],"databundleVersionId":46660,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":true,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","hasKernels":true,"hasSolutionFile":true,"userRankMultiplier":1,"rawDataUrl":"/c/6116/publicleaderboarddata.zip","mySubmissionsCount":0,"hostSegmentTitle":"Featured","canParticipate":true,"competitionHasLaunched":true,"competitionHasEnded":true,"ownerTwitter":"NOAA","externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/thumb76_76.png","competitionUrl":"/competitions/noaa-fisheries-steller-sea-lion-population-count","mergerDeadlineHasPassed":true,"categories":{"tags":[{"id":14102,"name":"image data","fullPath":"data type \u003E image data","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27image data%27","datasetCount":4126,"competitionCount":117,"notebookCount":4259,"tagUrl":"/tags/image-data","displayName":"Image Data"},{"id":7301,"name":"animals","fullPath":"subject \u003E earth and nature \u003E animals","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27animals%27","description":"The animals tag is as diverse as a rainforest. Is there a correlation between animal bites and NYC rat sightings? We\u0027re not sure. But the data is here and the world needs to know.","datasetCount":1035,"competitionCount":13,"notebookCount":860,"tagUrl":"/tags/animals","displayName":"Animals"},{"id":3003,"name":"water bodies","fullPath":"subject \u003E earth and nature \u003E environment \u003E water bodies","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27water bodies%27","description":"Lakes, oceans, rivers, streams, and infamous puddles.","datasetCount":57,"competitionCount":4,"notebookCount":68,"tagUrl":"/tags/bodies-of-water","displayName":"Water Bodies"},{"name":"mcrmse","description":"Average of the RMSE of each column."}],"type":"TAG_TYPE_COMPETITION"},"competitionHostClaims":{},"newEntrantDeadlineHasPassed":true,"rulesRequired":true,"modelFileSizeBytes":0,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat3"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div><div class="sc-ljWvmC lhuEqB"><div data-testid="competition-detail-render-tid" class="sc-bqWFKX jYxhSf competition"><div class="sc-iNUNZe hzqhPT"><div class="competition-header__container"><div class="pageheader"><div class="pageheader__container competition-header"><div class="competition-header__top"><div class="competition-header__top-image" style="background-image: url(&quot;https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/header.png&quot;);"></div><div class="pageheader__top--safe"><div class="competition-header__classification"><div class="competition-header__classification-icon-wrapper"><div class="competition-header__classification-icon"><span class="fa fa-trophy"></span></div></div><p class="competition-header__classification-text">Featured prediction Competition</p></div><div class="competition-header__meta"><div class="competition-header__info"><h1 class="competition-header__title">NOAA Fisheries Steller Sea Lion Population Count</h1><div class="competition-header__subtitle"><span>How many sea lions do you see?</span></div></div><div class="competition-header__prize"><span class="competition-header__prize-value">$25,000</span><span class="competition-header__prize-text">Prize Money</span></div></div><div class="competition-header__details"><div class="competition-header__details"><ul class="horizontal-list"><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span class="competition-header__org"><span class="competition-header__org-thumbnail"><img role="presentation" alt="" class="competition-header__org-thumbnail-image" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/thumbnail.jpg_r=167"></span><span class="competition-header__organization-name">NOAA</span></span></li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default">385 teams</li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span><span title="Wed Jun 28 2017 01:59:00 GMT+0200 (Central European Summer Time)" aria-label="Wed Jun 28 2017 01:59:00 GMT+0200 (Central European Summer Time)">5 years ago</span></span></li></ul></div></div></div></div><div class="sc-fGNSxb hceBHD" style="height: 47px; width: 1104px;"><div offset="64" class="sc-jCIAol iVJnrh"></div><div class="sc-gIzaEQ jKnIJb" style="top: 64px; height: 47px; width: 1104px; position: fixed; z-index: 5;"><div class="pageheader__bottom pageheader__bottom"><div class="sc-fbbMOy gKGlkS sc-hGzUJM kOvnPB"><div class="sc-kYHdBn eKjuYO"><div class="competition-header__nav-wrapper"><nav class="pageheader__nav pageheader__nav--competition "><div class="pageheader__nav-wrapper"><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/overview" title="overview" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--overview"><span><span>Overview</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/data" title="data" class="pageheader__left-links pageheader__left-links--with-onclick pageheader__left-links--selected" id="pageheader-nav-item--data"><span><span>Data</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/code" title="code" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--code"><span><span>Code</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/discussion" title="discussion" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--discussion"><span><span>Discussion</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/leaderboard" title="leaderboard" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--leaderboard"><span><span>Leaderboard</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/rules" title="rules" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--rules"><span><span>Rules</span></span></a><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/team" title="team" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--team"><span><span>Team</span></span></a><div class="pageheader__right-links-wrapper"><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/submissions" title="submissions" class="pageheader__right-links pageheader__right-links--with-onclick" id="pageheader-nav-item--submissions"><span><span>My Submissions</span></span></a></div></div></nav><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/submit" tabindex="0" class="sc-hjriPb fROQMb"><button class="sc-gUAEMC hfoKba" tabindex="-1" role="button"><span class="sc-gXmSlM sc-cCsOjp cKhlzA piYDj">Late Submission</span></button></a><div class="mdc-menu-surface--anchor"><button aria-label="more_horiz" class="sc-jSMfEi fnruJl sc-katydR lmFERn sc-dAIixb hypJCn google-material-icons">more_horiz</button></div><div role="alertdialog" aria-modal="true" class="sc-fSUSjI iCKMud mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"></div></div><div class="mdc-dialog__scrim"></div></div></div></div></div></div><div></div><div class="pageheader__transition"></div></div></div></div></div></div><div class="competition-data"><div class="sc-cTWfIk jEqRph"><div class="sc-cAurVL sc-kIuWHm jFSGmj hgBtrP">Data Description</div><div class="sc-JOXRF fsILfh"><div class="markdown-converter__text--rendered"><p>The goal of this competition is to estimate the number of each type of sea lion in each one of the test images. The different types of sea lion are: adult males (also known as bulls), subadult males, adult females, juveniles, and pups.</p>
+<p>Your submission file should have the following format:</p>
+<pre>test_id,adult_males,subadult_males,adult_females,juveniles,pups<br>0,1,1,1,1,1<br>1,1,1,1,1,1<br>2,1,1,1,1,1<br>etc</pre>
+<p>Your submissions will be evaluated by their <a rel="nofollow" href="https://www.kaggle.com/wiki/RootMeanSquaredError">RMSE</a>&nbsp;from the human-labelled ground truth, averaged over the columns.</p>
+<p>The file KaggleNOAASeaLions.7z&nbsp;is an encrypted 7-zip archive. An identical file is available&nbsp;via BitTorrent.&nbsp;<strong>Please do not share the archive password.</strong></p>
+<p>The archive contains the following items:</p>
+<ul>
+<li>sample_submission.csv: an example valid submission file</li>
+<li>Train/*.jpg: a set of training images, with each filename corresponding to a train_id</li>
+<li>Train/train.csv: a list of ground-truth counts for each train_id</li>
+<li>TrainDotted/*.jpg: copies of the training images with markings showing where each animal is (see below)</li>
+<li>Test/*.jpg: a set of test images, with each filename corresponding to a test_id</li>
+</ul>
+<p><a rel="nofollow" href="https://www.kaggle.com/c/noaa-fisheries-steller-sea-lion-population-count/discussion/30895">Update</a>: some training images do not match their equivalents in TrainDotted. A list is posted in the MismatchedTrainImages.txt file.</p>
+<p>In case&nbsp;you're not ready to torrent the main competition data file, we've added a small subset of the training data for you to get started on: TrainSmall2.7z. That archive contains the regular and dotted versions of training images 41&nbsp;to 50, plus the sample submission file. (Update: this file replaces the original TrainSmall.7z, which included two images that did not match their TrainDotted versions correctly.)</p>
+<p>In both the training set and the test set,&nbsp;most images have regions that have been blacked out. Those redactions were added by human labelers to avoid double-counting. You can ignore any black regions when generating your predictions.</p>
+<p>As an anti-cheating measure, Kaggle has added some extra images to the test set which will not be counted towards your score.</p>
+<p>To assist you in locating&nbsp;individual sea lions, the TrainDotted folder&nbsp;contains the same images as in the Train folder, but with colored dots placed over the animals. The color scheme of the dots is:</p>
+<ul>
+<li>red: adult males</li>
+<li>magenta: subadult males</li>
+<li>brown: adult females</li>
+<li>blue: juveniles</li>
+<li>green: pups</li>
+</ul>
+<p>An example&nbsp;image from the training set is reproduced&nbsp;below.</p>
+<p>Good luck!</p>
+<p><img height="618" width="800" alt="Example NOAA data image" src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/example_noaa_image.jpg"></p></div></div></div><div class="content-box content-box--no-title api-hint__box"><div class="content-box__content-section content-box__content-section--no-title api-hint__content"><div class="content-box__simple-content-box"><div class="content-box__simple-content"><div class="sc-eWWyYb hBxzSd"><span name="terminal" class="sc-tjLFZ iJcFcj fa fa-terminal"></span><span class="tooltip-multiline"><span class="tooltip-multiline__before" style="opacity: 0;"></span><div class="sc-jnaBFq bZLsuW">kaggle competitions download -c noaa-fisheries-steller-sea-lion-population-count</div><span class="tooltip-multiline__after" style="opacity: 0;"><div><div class="sc-iOvVvA vtDtX">Use the Kaggle API to download the dataset.</div><div class="sc-ROrPP dSCWhl">https://github.com/Kaggle/kaggle-api</div></div></span></span><div class="sc-kMHFWB eAZLYH"><span class="tooltip-multiline tooltip-multiline--left"><span class="tooltip-multiline__before tooltip-multiline__before--left" style="opacity: 0;"></span><span name="clipboard" class="sc-hSygng lcNlBz fa fa-clipboard"></span><span class="tooltip-multiline__after tooltip-multiline__after--left" style="opacity: 0;"><span>Copy API command to clipboard</span></span></span><span class="tooltip-multiline tooltip-multiline--left"><span class="tooltip-multiline__before tooltip-multiline__before--left" style="opacity: 0;"></span><a href="https://github.com/Kaggle/kaggle-api" target="_blank"><span name="question" class="sc-llmmgr eWIwVq fa fa-question"></span></a><span class="tooltip-multiline__after tooltip-multiline__after--left" style="opacity: 0;"><span>Kaggle API installation and documentation</span></span></span></div></div></div></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-lmHNfd jSTjUL mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div class="sc-jGyvXW jXnoKJ"><div class="sc-gfcaXJ cqghgK"><div class="sc-cXlbRe fkWHdd"><div class="sc-cDmekj jszDBW"><div class="sc-iCfpwr iiwjvE"><div class="sc-eJHOlC jtcFGI"><h2 class="sc-dmRaPn sc-kgflAQ sc-iznttV fgQspo bAlVxb">Data Explorer</h2><p class="sc-cxabCf sc-llJcti sc-eGPSjg ieLZFa hMXWEN kWEnoz">103.01 GB</p></div><ul class="sc-RryNr byLEwl"><li class="sc-OzCKV dHfgUO"><div role="button" class="sc-fEVxLL sc-cvnuvz ePZOHe QZdml"><div class="sc-jaIaHg cqpcDW"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">insert_drive_file</i></div><div class="sc-fjtGNs dUbiEX"><div class="sc-dwLEzm jSvpRy sc-dOaiCS fCEonP" data-tip="true" data-for="tooltip_components_6ecb6647-fc5a-475b-922f-ba4386f04468" currentitem="false"><p class="sc-cxabCf sc-llJcti sc-iaUDOe bGyNSd hMXWEN iggqYk">Kaggle-NOAA-SeaLions.torrent</p><div class="__react_component_tooltip t041b9bcf-7932-4456-9da3-c6c8c5743ec0 place-top type-dark react-tooltip" id="tooltip_components_6ecb6647-fc5a-475b-922f-ba4386f04468" data-id="tooltip" style="left: 468px; top: 416px;"><style aria-hidden="true">
+  	.t041b9bcf-7932-4456-9da3-c6c8c5743ec0 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-top {
+        margin-top: -10px;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-bottom {
+        margin-top: 10px;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-left {
+        margin-left: -10px;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-right {
+        margin-left: 10px;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t041b9bcf-7932-4456-9da3-c6c8c5743ec0.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">Kaggle-NOAA-SeaLions.torrent (7.85 MB)</div></div></div></div></div></li><li class="sc-OzCKV dHfgUO"><div role="button" class="sc-fEVxLL sc-cvnuvz gaMAIJ QZdml"><div class="sc-jaIaHg llEhwd"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">drive_zip_outline</i></div><div class="sc-fjtGNs dUbiEX"><div class="sc-dwLEzm jSvpRy sc-dOaiCS fCEonP" data-tip="true" data-for="tooltip_components_6b1cf75b-67b5-442b-86f2-60e30a7bee81" currentitem="false"><p class="sc-cxabCf sc-llJcti sc-iaUDOe bGyNSd hMXWEN doXDZb">KaggleNOAASeaLions.7z</p><div class="__react_component_tooltip t494d036d-d919-4bdf-b3d6-046836307930 place-top type-dark react-tooltip" id="tooltip_components_6b1cf75b-67b5-442b-86f2-60e30a7bee81" data-id="tooltip" style="left: 464px; top: 440px;"><style aria-hidden="true">
+  	.t494d036d-d919-4bdf-b3d6-046836307930 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t494d036d-d919-4bdf-b3d6-046836307930.place-top {
+        margin-top: -10px;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-bottom {
+        margin-top: 10px;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-left {
+        margin-left: -10px;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-right {
+        margin-left: 10px;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t494d036d-d919-4bdf-b3d6-046836307930.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">KaggleNOAASeaLions.7z (102.89 GB)</div></div></div></div></div></li><li class="sc-OzCKV dHfgUO"><div role="button" class="sc-fEVxLL sc-cvnuvz ePZOHe QZdml"><div class="sc-jaIaHg cqpcDW"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">article</i></div><div class="sc-fjtGNs dUbiEX"><div class="sc-dwLEzm jSvpRy sc-dOaiCS fCEonP" data-tip="true" data-for="tooltip_components_ebc1d4e9-5c0b-419c-a677-f41cd9d2fa8f" currentitem="false"><p class="sc-cxabCf sc-llJcti sc-iaUDOe bGyNSd hMXWEN iggqYk">MismatchedTrainImages.txt</p><div class="__react_component_tooltip tb28fe39b-01f1-4f11-869e-e532e1e41c37 place-top type-dark react-tooltip" id="tooltip_components_ebc1d4e9-5c0b-419c-a677-f41cd9d2fa8f" data-id="tooltip" style="left: 478px; top: 464px;"><style aria-hidden="true">
+  	.tb28fe39b-01f1-4f11-869e-e532e1e41c37 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-top {
+        margin-top: -10px;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-bottom {
+        margin-top: 10px;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-left {
+        margin-left: -10px;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-right {
+        margin-left: 10px;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tb28fe39b-01f1-4f11-869e-e532e1e41c37.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">MismatchedTrainImages.txt (224 B)</div></div></div></div></div></li><li class="sc-OzCKV dHfgUO"><div role="button" class="sc-fEVxLL sc-cvnuvz ePZOHe QZdml"><div class="sc-jaIaHg cqpcDW"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">drive_zip_outline</i></div><div class="sc-fjtGNs dUbiEX"><div class="sc-dwLEzm jSvpRy sc-dOaiCS fCEonP" data-tip="true" data-for="tooltip_components_dabf58a6-082b-408d-9dde-a936f506e391" currentitem="false"><p class="sc-cxabCf sc-llJcti sc-iaUDOe bGyNSd hMXWEN iggqYk">TrainSmall2.7z</p><div class="__react_component_tooltip t7c27f13b-715b-43ed-81d5-f896f88510ce place-top type-dark react-tooltip" id="tooltip_components_dabf58a6-082b-408d-9dde-a936f506e391" data-id="tooltip" style="left: 461px; top: 488px;"><style aria-hidden="true">
+  	.t7c27f13b-715b-43ed-81d5-f896f88510ce {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t7c27f13b-715b-43ed-81d5-f896f88510ce.place-top {
+        margin-top: -10px;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-bottom {
+        margin-top: 10px;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-left {
+        margin-left: -10px;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-right {
+        margin-left: 10px;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t7c27f13b-715b-43ed-81d5-f896f88510ce.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">TrainSmall2.7z (103.41 MB)</div></div></div></div></div></li><li class="sc-OzCKV dHfgUO"><div role="button" class="sc-fEVxLL sc-cvnuvz ePZOHe QZdml"><div class="sc-jaIaHg cqpcDW"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">article</i></div><div class="sc-fjtGNs dUbiEX"><div class="sc-dwLEzm jSvpRy sc-dOaiCS fCEonP" data-tip="true" data-for="tooltip_components_a627e089-fbe2-489e-a8da-c14c36c2660e" currentitem="false"><p class="sc-cxabCf sc-llJcti sc-iaUDOe bGyNSd hMXWEN iggqYk">data_password.txt</p><div class="__react_component_tooltip t0539531e-9fda-4e33-9fc6-237acb9e2bfb place-top type-dark" id="tooltip_components_a627e089-fbe2-489e-a8da-c14c36c2660e" data-id="tooltip"><style aria-hidden="true">
+  	.t0539531e-9fda-4e33-9fc6-237acb9e2bfb {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-top {
+        margin-top: -10px;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-bottom {
+        margin-top: 10px;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-left {
+        margin-left: -10px;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-right {
+        margin-left: 10px;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t0539531e-9fda-4e33-9fc6-237acb9e2bfb.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">data_password.txt (18 B)</div></div></div></div></div></li></ul></div></div><div class="sc-cAuihN gCLBpC"><h2 class="sc-dmRaPn sc-kgflAQ sc-kfWwvt fgQspo bAlVxb jNWPbb">Summary</h2><div class="sc-fwGvwQ fHYnuZ"><div class="sc-gtdqcR eGLjsb"><div class="sc-fCdBJp erDIvD"><i color="#5F6368" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf kqAZRH sc-fDXmWF eJpUvW">arrow_right</i></div><div class="sc-jaIaHg cqpcDW"><i sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf jWACgA">folder</i></div><p class="sc-cxabCf sc-llJcti sc-eHAsqE ieLZFa hMXWEN fNhDHG">5 files</p></div></div></div><div class="sc-fYYHfE bWuDjG"><button class="sc-gUAEMC cWQmIJ" tabindex="0" role="button" style="margin-bottom: 8px;"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf iXgWvr">get_app</i><span class="sc-gXmSlM sc-cCsOjp cKhlzA piYDj">Download All</span></button></div></div><div class="sc-jDGzVA iPXRvy"><div class="sc-fXywWY hHEDMf"><div class="sc-jdHRdX kPKlTO"><div class="sc-dwLEzm jSvpRy" data-tip="true" data-for="tooltip_components_bc89eb70-5239-4633-8c14-241829c96f93" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKXOVf eUqryR sc-gKmiIT kGiFse">chevron_left</i><div class="__react_component_tooltip t63529089-8170-4c9a-8475-d7f3f0562b8a place-top type-dark react-tooltip" id="tooltip_components_bc89eb70-5239-4633-8c14-241829c96f93" data-id="tooltip" style="left: 725px; top: 377px;"><style aria-hidden="true">
+  	.t63529089-8170-4c9a-8475-d7f3f0562b8a {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t63529089-8170-4c9a-8475-d7f3f0562b8a.place-top {
+        margin-top: -10px;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-bottom {
+        margin-top: 10px;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-left {
+        margin-left: -10px;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-right {
+        margin-left: 10px;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t63529089-8170-4c9a-8475-d7f3f0562b8a.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">Hide tree</div></div></div><h2 class="sc-dIouRR sc-hHLeRK sc-flkpTi ipdnRD eZwBsd iCiLEF">KaggleNOAASeaLions.7z<span class="sc-fNPocS ewsTKf">(102.89 GB)</span></h2><div class="sc-dwLEzm jSvpRy" data-tip="true" data-for="tooltip_components_2a8d5861-cbfe-41ad-91dd-d56dba0a8cdb" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKXOVf eUqryR sc-gKmiIT kOXyqC">get_app</i><div class="__react_component_tooltip t0f73697f-8628-4791-813b-be3a9a5d28b2 place-top type-dark react-tooltip" id="tooltip_components_2a8d5861-cbfe-41ad-91dd-d56dba0a8cdb" data-id="tooltip" style="left: 1471px; top: 377px;"><style aria-hidden="true">
+  	.t0f73697f-8628-4791-813b-be3a9a5d28b2 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t0f73697f-8628-4791-813b-be3a9a5d28b2.place-top {
+        margin-top: -10px;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-bottom {
+        margin-top: 10px;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-left {
+        margin-left: -10px;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-right {
+        margin-left: 10px;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t0f73697f-8628-4791-813b-be3a9a5d28b2.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">Download</div></div></div><div class="sc-dwLEzm jSvpRy" data-tip="true" data-for="tooltip_components_f7c93dc0-109b-4697-959c-9df133d7b4f4" currentitem="false"><i color="rgba(0,0,0,0.7)" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKXOVf eUqryR sc-gKmiIT kOXyqC">fullscreen</i><div class="__react_component_tooltip tb15b4e33-5ccc-4a04-9d14-3c54c976954e place-top type-dark react-tooltip" id="tooltip_components_f7c93dc0-109b-4697-959c-9df133d7b4f4" data-id="tooltip" style="left: 1489px; top: 377px;"><style aria-hidden="true">
+  	.tb15b4e33-5ccc-4a04-9d14-3c54c976954e {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-top {
+        margin-top: -10px;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-bottom {
+        margin-top: 10px;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-left {
+        margin-left: -10px;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-right {
+        margin-left: 10px;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tb15b4e33-5ccc-4a04-9d14-3c54c976954e.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-TRNrF ikcdev">Maximize view</div></div></div></div><div class="sc-dTQRDE gOXgEs"></div><div class="sc-cbDwiu RgzFE"><h6 class="sc-dmRaPn sc-kgflAQ sc-hZiMVj fgQspo bAlVxb kvGsIx">Unable to show preview</h6><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/error.png" class="sc-dDaJoQ hZPhfm"><p class="sc-cxabCf sc-llJcti sc-McAUB jBwIGx hMXWEN htuJDx">Previews for binary data are not supported</p></div></div></div></div></div><div role="alertdialog" aria-modal="true" class="sc-fSUSjI iCKMud mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"><div class="sc-kXJFhl eawXCT"><button aria-label="close" class="sc-jSMfEi bWdumZ sc-gSBSf gOKQWi google-material-icons">close</button><div class="sc-eefUiM jZwMiW"><div class="sc-caxCFx eXAXyo"><div _size="xlarge" class="rmwc-circular-progress rmwc-circular-progress--size-xlarge rmwc-circular-progress--indeterminate rmwc-circular-progress--thickerstroke"><svg class="rmwc-circular-progress__circle" viewBox="0 0 48 48"><circle class="rmwc-circular-progress__path" cx="24" cy="24" r="20"></circle></svg></div></div></div></div></div></div><div class="mdc-dialog__scrim"></div></div></div><div role="alertdialog" aria-modal="true" class="sc-fSUSjI iCKMud mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"><h2 class="sc-ksZaOG sc-hAZoDl sc-bTmccw hhxTmv gYrcjl fwFKtl">Please read the competition rules</h2><div class="sc-cXFvGM gNvtcT"><a role="button" href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/rules" target="_blank"><img src="./NOAA Fisheries Steller Sea Lion Population Count _ Kaggle_files/thumb76_76.png" alt="Competition Rules" class="sc-gHnmx kKXEnu"></a><p class="sc-bBrHrO sc-ivTmOn gdFqSP DPcjy"><a href="https://www.kaggle.com/competitions/noaa-fisheries-steller-sea-lion-population-count/rules" target="_blank" class="sc-dPyBCJ sc-bBXxYQ cSRCiy ittBhE">NOAA Fisheries Steller Sea Lion Population Count Rules</a></p></div><div class="sc-hQRsPl sc-hkMWNi fizTDW jhsYrt">By clicking on the "I Understand and Accept" button below, you agree to be bound by the competition rules.</div><div class="sc-fThYeS fbHuFw"><button class="sc-gUAEMC hfoKba" tabindex="0" role="button"><span class="sc-gXmSlM sc-cCsOjp cKhlzA piYDj">I Understand and Accept</span></button></div></div></div><div class="mdc-dialog__scrim"></div></div></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-cbBgWB jtHuMn mdc-snackbar"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div id="nav-footer" class="sc-gVAlfg fPGupY"></div></div><div class="sc-dwVMhp iQUGDN"></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-lmHNfd jSTjUL mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div></div></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"competitionId":6116,"competitionType":"COMPETITION_TYPE_PREDICTION","competitionTitle":"NOAA Fisheries Steller Sea Lion Population Count","briefDescription":"How many sea lions do you see?","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/header.png","organizationId":22,"organizationName":"NOAA","organizationThumbnailUrl":"https://storage.googleapis.com/kaggle-organizations/22/thumbnail.jpg%3Fr=167","hasAcceptedRules":true,"dateEnabled":"2017-03-27T21:10:25.543Z","deadline":"2017-06-27T23:59:00Z","mergerDeadline":"2017-06-20T23:59:00Z","newEntrantDeadline":"2017-06-20T23:59:00Z","rewardQuantity":25000,"rewardTypeName":"USD","totalTeams":385,"hostSegment":"HOST_SEGMENT_FEATURED","rules":{"id":16472,"postId":61205,"content":"\u003Cul\u003E\r\n\u003Cli\u003EPretrained models can be used in this competition, provided that they are posted in the official discussion thread before the competition entry deadline.\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003C!-- Begin Base Rules --\u003E\r\n\u003Ch3\u003EOne account per participant\u003C/h3\u003E\r\n\u003Cp\u003EYou cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.\u003C/p\u003E\r\n\u003Ch3\u003ENo private sharing outside teams\u003C/h3\u003E\r\n\u003Cp\u003EPrivately sharing code or data outside of teams is not permitted. It\u0027s okay to share code if made available to all participants on the forums.\u003C/p\u003E\r\n\u003Ch3\u003ETeam Mergers\u003C/h3\u003E\r\n\u003Cp\u003ETeam mergers are allowed and can be performed by the team leader. In order to merge, the combined team must have a total submission count less than or equal to the maximum allowed as of the merge date. The maximum allowed is the number of submissions per day multiplied by the number of days the competition has been running.\u003C/p\u003E\r\n\u003Ch3\u003ETeam Limits\u003C/h3\u003E\r\n\u003Cp\u003EThere is no maximum team size.\u003C/p\u003E\r\n\u003Ch3\u003ESubmission Limits\u003C/h3\u003E\r\n\u003Cp\u003EYou may submit a maximum of 5 entries per day.\u003C/p\u003E\r\n\u003Cp\u003EYou may select up to 2 final submissions for judging.\u003C/p\u003E\r\n\u003Ch3\u003ECompetition Timeline\u003C/h3\u003E\r\n\u003Cp\u003EStart Date: \u003Cstrong\u003ETBA\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EMerger Deadline: \u003Cstrong\u003E6/20/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EEntry Deadline: \u003Cstrong\u003E6/20/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EEnd Date: \u003Cstrong\u003E6/27/2017 11:59 PM UTC\u003C/strong\u003E\u003C/p\u003E\r\n\u003C!-- End Base Rules --\u003E\r\n\u003Ch3\u003ECOMPETITION-SPECIFIC TERMS\u003C/h3\u003E\r\n\u003Cp\u003ECOMPETITION NAME (the \u0027Competition\u0027): NOAA Fisheries Steller Sea Lion Population Count\u003C/p\u003E\r\n\u003Cp\u003ECOMPETITION SPONSOR: NOAA\u003C/p\u003E\r\n\u003Cp\u003ECOMPETITION WEBSITE: https://www.kaggle.com/c/noaa-fisheries-steller-sea-lion-population-count\u003C/p\u003E\r\n\u003Cp\u003EPRIZES: $25,000 total\u00A0\u003C/p\u003E\r\n\u003Cp\u003EWINNER LICENSE TYPE: Non-Exclusive License\u003C/p\u003E\r\n\u003Cp\u003EMAXIMUM TEAM SIZE: as listed above\u003C/p\u003E\r\n\u003Cp\u003EMAXIMUM SUBMISSIONS PER DAY: as listed above\u003C/p\u003E\r\n\u003Ch3\u003ECOMPETITION FRAMEWORK\u003C/h3\u003E\r\n\u003Cp\u003EThese are the complete, official rules for the Competition (the \u0027Competition Rules\u0027) and incorporate by reference the contents of the Competition Website listed above.\u003C/p\u003E\r\n\u003Cp\u003EBy downloading a dataset linked from the Competition Website, submitting an entry to this Competition, or joining a Team in this Competition, you are agreeing to be bound by these Competition Rules which constitute a binding agreement between you and the Competition Sponsor.\u003C/p\u003E\r\n\u003Cp\u003EThe Competition is sponsored by the Competition Sponsor listed above and hosted on the Sponsor\u0027s behalf by Kaggle Inc (\u0027Kaggle\u0027).\u003C/p\u003E\r\n\u003Cp\u003EThe Competition will run from Start Date to End Date as listed on the Competition Website. Note that Competition deadlines are subject to change and additional hurdle deadlines may be introduced during the Competition. Any additional or altered deadlines not already described in these Competition Rules will be publicized to the Participants via the Competition Website. It is the Participant\u0027s responsibility in this Competition to check the website regularly throughout the Competition to stay informed of any new or updated deadlines. Neither Kaggle nor Competition Sponsor are responsible for any Participant\u0027s failure to do so.\u003C/p\u003E\r\n\u003Cp\u003EEach registered individual or Team is referred to as a Participant. You may only participate using a single, unique Kaggle account registered at http://www.kaggle.com. Participating using more than one Kaggle account per individual Participant is a breach of these Competition Rules and Competition Sponsor reserves the right to disqualify any Participant (or Team including Participant) who is found to breach these Competition Rules.\u003C/p\u003E\r\n\u003Ch3\u003EELIGIBILITY\u003C/h3\u003E\r\n\u003Cp\u003EThe Competition is open to all individuals over the age of 18 at the time of entry and to all validly formed legal entities that have not declared or been declared in bankruptcy.\u003C/p\u003E\r\n\u003Cp\u003EOfficers, directors, employees and advisory board members (and their immediate families and members of the same household) of the Competition Sponsor, Kaggle and their respective affiliates, subsidiaries, contractors (with the express exception of Kaggle\u0027s authorized Kaggle Community Evangelists), agents, judges and advertising and promotion agencies are not eligible to participate in the Competition.\u003C/p\u003E\r\n\u003Cp\u003EYou are not eligible to receive any Prize in the Competition if you are a resident of a country designated by the United States Treasury\u2019s Office of Foreign Assets Control (see \u0026lt;http://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/default.aspx\u0026gt; for additional information).\u003C/p\u003E\r\n\u003Ch3\u003ESUBMISSIONS\u003C/h3\u003E\r\n\u003Cp\u003E\u0027Submission\u0027 means the material submitted by you in the manner and format specified on the Website via the Submission form on the Website. You (or if you are part of a Team, your Team) may submit up to the maximum number of Submissions per day as specified above. All Submissions must be uploaded to the Website in the manner and format specified on the Website. Submissions must be received prior to the Competition deadline and adhere to the guidelines for Submissions specified on the Website.\u003C/p\u003E\r\n\u003Cp\u003ESubmissions may not use or incorporate information from hand labeling or human prediction of the validation dataset or test data records.\u003C/p\u003E\r\n\u003Cp\u003EIf the Competition is a multi-stage Competition with temporally separate training data and/or leaderboard data, one or more valid Submissions must be made and selected during each stage of the Competition in the manner described on the Competition Website.\u003C/p\u003E\r\n\u003Ch3\u003EINTELLECTUAL PROPERTY\u003C/h3\u003E\r\n\u003Ch4\u003EDATA\u003C/h4\u003E\r\n\u003Cp\u003E\u0027Data\u0027 means the Data or Datasets linked from the Competition Website for the purpose of use by Participants in the Competition. For the avoidance of doubt, Data is deemed for the purpose of these Competition Rules to include any prototype or executable code provided to Participants by Kaggle or Competition Sponsor via the Website. Participants must use the Data only as permitted by these Competition Rules and any associated data use rules specified on the Competition Website.\u003C/p\u003E\r\n\u003Cp\u003EUnless otherwise permitted by the terms of the Competition Website, Participants must use the Data solely for the purpose and duration of the Competition, including but not limited to reading and learning from the Data, analyzing the Data, modifying the Data and generally preparing your Submission and any underlying models and participating in forum discussions on the Website. Participants agree to use suitable measures to prevent persons who have not formally agreed to these Competition Rules from gaining access to the Data and agree not to transmit, duplicate, publish, redistribute or otherwise provide or make available the Data to any party not participating in the Competition. Participants agree to notify Kaggle immediately upon learning of any possible unauthorized transmission or unauthorized access of the Data and agree to work with Kaggle to rectify any unauthorized transmission. Participants agree that participation in the Competition shall not be construed as having or being granted a license (expressly, by implication, estoppel, or otherwise) under, or any right of ownership in, any of the Data.\u003C/p\u003E\r\n\u003Ch4\u003EEXTERNAL DATA\u003C/h4\u003E\r\n\u003Cp\u003EUnless otherwise expressly stated on the Competition Website, Participants must not use data other than the Data to develop and test their models and Submissions. Competition Sponsor reserves the right in its sole discretion to disqualify any Participant who Competition Sponsor discovers has undertaken or attempted to undertake the use of data other than the Data, or who uses the Data other than as permitted according to the Competition Website and in these Competition Rules, in the course of the Competition.\u003C/p\u003E\r\n\u003Ch4\u003ECODE SHARING\u003C/h4\u003E\r\n\u003Cp\u003EParticipants are prohibited from privately sharing source or executable code developed in connection with or based upon the Data, and any such sharing is a breach of these Competition Rules and may result in disqualification.\u003C/p\u003E\r\n\u003Cp\u003EParticipants are permitted to publicly share source or executable code developed in connection with or based upon the Data, or otherwise relevant to the Competition, provided that such sharing does not violate the intellectual property rights of any third party. By so sharing, the sharing Participant is thereby deemed to have licensed the shared code under the MIT License (an open source software license commonly described at \u0026lt;http://opensource.org/licenses/MIT\u0026gt;).\u003C/p\u003E\r\n\u003Ch4\u003EOPEN-SOURCE CODE\u003C/h4\u003E\r\n\u003Cp\u003EA Submission will be ineligible to win a prize if it was developed using code containing or depending on software licensed under an open source license:\u003C/p\u003E\r\n\u003Cp\u003E* \u003Cem\u003Eother than\u003C/em\u003E an Open Source Initiative-approved license (see \u0026lt;http://opensource.org/\u0026gt;); or\u003Cbr /\u003E* an open source license that prohibits commercial use.\u003C/p\u003E\r\n\u003Ch3\u003EWINNING\u003C/h3\u003E\r\n\u003Ch4\u003EDETERMINING WINNERS\u003C/h4\u003E\r\n\u003Cp\u003EThis Competition is a challenge of skill and the final results are determined solely by leaderboard ranking on the private leaderboard (subject to compliance with these Competition Rules). Participants\u0027 scores and ranks on the Competition Website at any given stage of the Competition will be based on the evaluation metric described on the Competition Website, as determined by applying the predictions in the Submission to the ground truth of a validation dataset whose instances were a fixed set sampled from the Data.\u003C/p\u003E\r\n\u003Cp\u003EThe evaluation metric used for scoring and ranking Submissions will be displayed on the Competition Website.\u003C/p\u003E\r\n\u003Cp\u003EPrize awards are subject to verification of eligibility and compliance with these Competition Rules. All decisions of the Competition Sponsor and judges will be final and binding on all matters relating to this Competition. Competition Sponsor reserves the right to examine the Submission and any associated code or documentation for compliance with these Competition Rules. In the event that the Submission demonstrates a breach of these Competition Rules, Competition Sponsor may at its discretion take either of the following actions:\u003C/p\u003E\r\n\u003Cp\u003E* disqualify your Submission(s); or \u003Cbr /\u003E* require that you remediate within one week all issues identified in your Submission(s) (including, without limitation, the resolution of license conflicts, the fulfillment of all obligations required by software licenses, and the removal of any software that violates the software restrictions).\u003C/p\u003E\r\n\u003Ch4\u003ERESOLVING TIES\u003C/h4\u003E\r\n\u003Cp\u003EA tie between two or more valid and identically ranked submissions will be resolved in favour of the tied submission that was submitted first.\u003C/p\u003E\r\n\u003Ch4\u003EDECLINING PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EA Participant may decline to be nominated as a Winner by notifying Kaggle directly within one week following the Competition deadline, in which case the declining Participant forgoes any prize or other features associated with winning the Competition. Kaggle reserves the right to disqualify a Participant who so declines at Kaggle\u0027s sole discretion if Kaggle deems disqualification appropriate.\u003C/p\u003E\r\n\u003Ch3\u003EWINNERS\u0027 OBLIGATIONS\u003C/h3\u003E\r\n\u003Ch4\u003EDELIVERY \u0026amp; DOCUMENTATION\u003C/h4\u003E\r\n\u003Cp\u003EAs a condition of receipt of the Prize, the Prize winner must deliver the final model\u2019s software code as used to generate the winning Submission and associated documentation (consistent with the winning model documentation template available on the kaggle wiki at https://www.kaggle.com/wiki/WinningModelDocumentationTemplate) to the Competition Sponsor. The delivered software code must be capable of generating the winning Submission and contain a description of resources required to build and/or run the executable code successfully.\u003C/p\u003E\r\n\u003Cp\u003EIf a potential winning Participant or Team member is a U.S. citizen, potential winner must also sign and return an IRS W-9 form, or if a foreign resident, an IRS W-8BEN form, within the stated time in order to claim the prize.\u003C/p\u003E\r\n\u003Cp\u003EPotential winners will be disqualified and the prize may be awarded to an alternate winner (the next-ranked qualified Participant on the leaderboard) if\u003C/p\u003E\r\n\u003Cp\u003E* the required documentation is not returned within 14 days after receipt of any request to provide documentation;\u003Cbr /\u003E* prize notification letter/email or prize is returned as undeliverable; or\u003Cbr /\u003E* potential winner or winning Team member is disqualified for any reason.\u003C/p\u003E\r\n\u003Cp\u003EBy accepting any Prize, each Participant receiving a Prize thereby agrees to use of his/her name, address, likeness and/or Prize information by Kaggle and Competition Sponsor for promotional purposes in any medium without additional compensation.\u003C/p\u003E\r\n\u003Ch4\u003EPARTICIPANT INTELLECTUAL PROPERTY LICENSING\u003C/h4\u003E\r\n\u003Cp\u003EAs a further condition of receipt of a Prize, each winning Participant thereby licenses their winning Submission and the source code used to generate the Submission according to the Winner License Type specified above (note: if no Winner License Type is specified above, the Winner License Type is deemed to be Non-Exclusive License).\u003C/p\u003E\r\n\u003Ch5\u003EPUBLIC COMPETITIONS: NON-EXCLUSIVE LICENSE\u003C/h5\u003E\r\n\u003Cp\u003EIf the Winner License Type for the Competition (see Winner License Type above) is a Non-Exclusive License then each Winner by accepting a Prize thereby:\u003C/p\u003E\r\n\u003Cp\u003E* grants to Competition Sponsor and its designees a worldwide, non-exclusive, sub-licensable, transferable, fully paid-up, royalty-free, perpetual, irrevocable right to use, not use, reproduce, distribute, create derivative works of, publicly perform, publicly display, digitally perform, make, have made, sell, offer for sale and import their winning Submission and the source code used to generate the Submission, in any media now known or hereafter developed, for any purpose whatsoever, commercial or otherwise, without further approval by or payment to Participant; and\u003Cbr /\u003E* represents that he/she/it has the unrestricted right to grant that license.\u003C/p\u003E\r\n\u003Ch5\u003ERESEARCH COMPETITIONS: OPEN SOURCE LICENSE\u003C/h5\u003E\r\n\u003Cp\u003EIf the Winner License Type for the Competition (see Winner License Type above) is Open Source License, then each Winner by accepting a Prize thereby:\u003C/p\u003E\r\n\u003Cp\u003E* licenses their winning Submission and the source code used to generate the Submission under the MIT License (an open source software license commonly described at \u0026lt;http://opensource.org/licenses/MIT\u0026gt;), unless another open source license is chosen explicitly from the list of those approved by the\u00A0Open Source Initiative\u00A0at \u0026lt;http://opensource.org/licenses/\u0026gt;;\u00A0and\u003Cbr /\u003E* represents that he/she/it has the unrestricted right to grant that license.\u003C/p\u003E\r\n\u003Ch5\u003ERECRUITING COMPETITION SUBMISSION LICENSE GRANT\u003C/h5\u003E\r\n\u003Cp\u003EIf the Competition is classed above as a Recruiting Competition, Participant agrees to grant and hereby grants to Competition Sponsor a perpetual, irrevocable, worldwide, royalty-free, transferable, and sublicenseable right to use, review, reproduce, and internally distribute the Submission (including any and all submitted source code) in connection with evaluating Participant\u0027s suitability for employment, provided that the Submission licensed as set forth above will not be used for Competition Host\u2019s commercial purposes except as may otherwise be set forth in this Agreement.\u003C/p\u003E\r\n\u003Ch4\u003ECHEATING\u003C/h4\u003E\r\n\u003Cp\u003EParticipating using more than one Kaggle account is deemed cheating and, if discovered, will result in disqualification from the Competition and any other affected Competitions and may result in banning or deactivation of affected Kaggle accounts.\u003C/p\u003E\r\n\u003Ch4\u003ERECEIVING PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EAfter verification of eligibility, each Prize winner will receive the prize in the form of a check or wire transfer made out to the Prize winner (if an individual, or to the individual Team members if a Team). Allow 30 days from final confirmation for Prize delivery. Any winners who are U.S. citizens will receive an IRS 1099 form in the amount of their prize at the appropriate time. Prize winners are responsible for any taxes, fees or other liability resulting from their receipt of a Prize.\u003C/p\u003E\r\n\u003Ch3\u003ETEAMS\u003C/h3\u003E\r\n\u003Ch4\u003EFORMING A TEAM\u003C/h4\u003E\r\n\u003Cp\u003EMultiple individuals or entities may collaborate as a team (\u201CTeam\u201D). You may not participate on more than one Team. Each Team member must be a single individual operating a separate Kaggle account. You must register individually for the Competition before joining a Team. You must confirm your Team membership to make it official by responding to the Team notification message which will be sent to your Account.\u003C/p\u003E\r\n\u003Cp\u003ETeam membership may not exceed the Maximum Team Size.\u003C/p\u003E\r\n\u003Ch4\u003ETEAM MERGERS\u003C/h4\u003E\r\n\u003Cp\u003ETeams may be permitted to merge at Kaggle\u2019s discretion, so long as the merged Team meets all requirements in these Competition Rules. Kaggle will review any merger request and will either approve or reject the request within three business days. Merger requests may be rejected if the combined number of Entries made by the merging Teams exceeds the number of Entries permissible at the date of the merger request. Team merger requests will not be permitted within seven days of any deadline listed on the Competition Website.\u003C/p\u003E\r\n\u003Ch4\u003ETEAM PRIZES\u003C/h4\u003E\r\n\u003Cp\u003EIf a Team wins a monetary Prize, Competition Sponsor will allocate the Prize money in even shares between the Team members unless the Team unanimously contacts Kaggle via the Competition Website within three business days following the Submission deadline to request an alternative prize distribution.\u003C/p\u003E\r\n\u003Ch3\u003EWARRANTIES AND OBLIGATIONS\u003C/h3\u003E\r\n\u003Ch4\u003EPARTICIPANT WARRANTIES AND OBLIGATIONS\u003C/h4\u003E\r\n\u003Cp\u003EBy registering, you agree that (a) your Account is complete, correct and accurate and (b) your registration may be rejected or terminated and all Entries submitted by you and/or your Team may be disqualified if any of the information in your Account is (or Competition Sponsor has reasonable grounds to believe it is) incomplete, incorrect or inaccurate. You are solely responsible for your Account. All registration information is deemed collected in the United States.\u003C/p\u003E\r\n\u003Cp\u003EParticipation is subject to all federal, state and local laws and regulations. Void where prohibited or restricted by law. You are responsible for checking applicable laws and regulations in your jurisdiction before participating in the Competition to make sure that your participation is legal. You are responsible for all taxes and reporting related to any award that you may receive as part of the Competition. You are responsible for abiding by your employer\u0027s policies regarding participation in the Competition. Competition Sponsor disclaims any and all liability or responsibility for disputes arising between you and your employer related to this Competition.\u003C/p\u003E\r\n\u003Cp\u003EEach Participant is solely responsible for all equipment, including but not necessarily limited to a computer and internet connection necessary to access the Website and to develop and upload any Submission, and any telephone, data, hosting or other service fees associated with such access, as well as all costs incurred by or behalf of the Entrant in participating in the Competition.\u003C/p\u003E\r\n\u003Cp\u003EBy entering a Submission, you represent and warrant that all information you enter on the Website is true and complete to the best of your knowledge, that you have the right and authority to make the Submission (including any underlying code and model) on your own behalf or on behalf of the persons and entities that you specify within the Submission, and that your Submission:\u003C/p\u003E\r\n\u003Cp\u003E* is your own original work, or is used by permission, in which case full and proper credit and identify is given and the third party contributions are clearly identified within your Submission;\u003Cbr /\u003E* does not contain confidential information or trade secrets and is not the subject of a registered patent or pending patent application;\u003Cbr /\u003E* does not violate or infringe upon the patent rights, industrial design rights, copyrights, trademarks, rights of privacy, publicity or other intellectual property or other rights of any person or entity;\u003Cbr /\u003E* does not contain malicious code, such as viruses, timebombs, cancelbots, worms, Trojan horses or other potentially harmful programs or other material or information; \u003Cbr /\u003E* does not and will not violate any applicable law, statute, ordinance, rule or regulation;\u003Cbr /\u003E* does not trigger any reporting or royalty obligation to any third party; and\u003Cbr /\u003E* was not previously published and has not won any other prize/award. \u003Cbr /\u003EA breach of any of these warranties will result in the corresponding Submission being invalid.\u003C/p\u003E\r\n\u003Ch4\u003ELIMITATION OF LIABILITY\u003C/h4\u003E\r\n\u003Cp\u003EBy participating in the Competition, each Participant agrees to release, indemnify and hold harmless Competition Sponsor, Kaggle, their respective affiliates, subsidiaries, advertising and promotions agencies, as applicable, and each of their respective agents, representatives, officers, directors, shareholders, and employees from and against any injuries, losses, damages, claims, actions and any liability of any kind resulting from or arising out of your participation in or association with the Competition. Competition Sponsor is not responsible for any miscommunications such as technical failures related to computer, telephone, cable, and unavailable network or server connections, related technical failures, or other failures related to hardware, software or virus, or incomplete, late or misdirected Submissions. Competition Sponsor reserves the right to cancel, modify or suspend the Competition should any computer virus, bug or other technical difficulty or other causes beyond the control of Competition Sponsor corrupt the administration, security or proper play of the Competition, and to determine winners from among Submission not affected by the corruption, if any, in its sole discretion.\u003C/p\u003E\r\n\u003Cp\u003ENeither Kaggle nor Competition Sponsor are responsible for (a) late, lost, stolen, damaged, garbled, incomplete, incorrect or misdirected Entries or other communications, (b) errors, omissions, interruptions, deletions, defects, or delays in operations or transmission of information, in each case whether arising by way of technical or other failures or malfunctions of computer hardware, software, communications devices, or transmission lines, or (c) data corruption, theft, destruction, unauthorized access to or alteration of Submission materials, loss or otherwise. Neither Kaggle nor Competition Sponsor are responsible for electronic communications or emails which are undeliverable as a result of any form of active or passive filtering of any kind, or insufficient space in any email account to receive email messages. Competition Sponsor disclaims any liability for damage to any computer system resulting from participation in, or accessing or downloading information in connection with, the Competition.\u003C/p\u003E\r\n\u003Ch4\u003ERESERVATION OF RIGHTS\u003C/h4\u003E\r\n\u003Cp\u003ECompetition Sponsor reserves the right to modify the Start Date, End Date, and the right to modify, add or remove additional Competition deadlines for any reason. Any changes will be communicated through the Competition Website. Competition Sponsor also reserves the right to modify, remove or add Data to the Website upon notice via the Competition Website. NEITHER KAGGLE NOR COMPETITION SPONSOR ARE RESPONSIBLE FOR ANY FAILURE OF A PARTICIPANT TO RECEIVE DATA CHANGES.\u003C/p\u003E\r\n\u003Ch3\u003EMISCELLANEOUS\u003C/h3\u003E\r\n\u003Ch4\u003ESEVERABILITY\u003C/h4\u003E\r\n\u003Cp\u003EThe invalidity or unenforceability of any provision of these Competition Rules shall not affect the validity or enforceability of any other provision. In the event that any provision is determined to be invalid or otherwise unenforceable or illegal, these Competition Rules shall otherwise remain in effect and be construed in accordance with their terms as if the invalid or illegal provision was not contained herein.\u003C/p\u003E\r\n\u003Ch4\u003ELAW\u003C/h4\u003E\r\n\u003Cp\u003EYou agree that these terms and the relationship between you and Competition Sponsor shall be governed by the laws of the State of California and the United States of America.\u003C/p\u003E","mimeType":"text/html","name":"rules"},"dataIntro":{"id":16468,"postId":61201,"content":"\u003Cp\u003EThe goal of this competition is to estimate the number of each type of sea lion in each one of the test images. The different types of sea lion are: adult males (also known as bulls), subadult males, adult females, juveniles, and pups.\u003C/p\u003E\r\n\u003Cp\u003EYour submission file should have the following format:\u003C/p\u003E\r\n\u003Cpre\u003Etest_id,adult_males,subadult_males,adult_females,juveniles,pups\u003Cbr /\u003E0,1,1,1,1,1\u003Cbr /\u003E1,1,1,1,1,1\u003Cbr /\u003E2,1,1,1,1,1\u003Cbr /\u003Eetc\u003C/pre\u003E\r\n\u003Cp\u003EYour submissions will be evaluated by their \u003Ca href=\u0022https://www.kaggle.com/wiki/RootMeanSquaredError\u0022\u003ERMSE\u003C/a\u003E\u00A0from the human-labelled ground truth, averaged over the columns.\u003C/p\u003E\r\n\u003Cp\u003EThe file KaggleNOAASeaLions.7z\u00A0is an encrypted 7-zip archive. An identical file is available\u00A0via BitTorrent.\u00A0\u003Cstrong\u003EPlease do not share the archive password.\u003C/strong\u003E\u003C/p\u003E\r\n\u003Cp\u003EThe archive contains the following items:\u003C/p\u003E\r\n\u003Cul\u003E\r\n\u003Cli\u003Esample_submission.csv: an example valid submission file\u003C/li\u003E\r\n\u003Cli\u003ETrain/*.jpg: a set of training images, with each filename corresponding to a train_id\u003C/li\u003E\r\n\u003Cli\u003ETrain/train.csv: a list of ground-truth counts for each train_id\u003C/li\u003E\r\n\u003Cli\u003ETrainDotted/*.jpg: copies of the training images with markings showing where each animal is (see below)\u003C/li\u003E\r\n\u003Cli\u003ETest/*.jpg: a set of test images, with each filename corresponding to a test_id\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003Cp\u003E\u003Ca href=\u0022https://www.kaggle.com/c/noaa-fisheries-steller-sea-lion-population-count/discussion/30895\u0022\u003EUpdate\u003C/a\u003E: some training images do not match their equivalents in TrainDotted. A list is posted in the MismatchedTrainImages.txt file.\u003C/p\u003E\r\n\u003Cp\u003EIn case\u00A0you\u0027re not ready to torrent the main competition data file, we\u0027ve added a small subset of the training data for you to get started on: TrainSmall2.7z. That archive contains the regular and dotted versions of training images 41\u00A0to 50, plus the sample submission file. (Update: this file replaces the original TrainSmall.7z, which included two images that did not match their TrainDotted versions correctly.)\u003C/p\u003E\r\n\u003Cp\u003EIn both the training set and the test set,\u00A0most images have regions that have been blacked out. Those redactions were added by human labelers to avoid double-counting. You can ignore any black regions when generating your predictions.\u003C/p\u003E\r\n\u003Cp\u003EAs an anti-cheating measure, Kaggle has added some extra images to the test set which will not be counted towards your score.\u003C/p\u003E\r\n\u003Cp\u003ETo assist you in locating\u00A0individual sea lions, the TrainDotted folder\u00A0contains the same images as in the Train folder, but with colored dots placed over the animals. The color scheme of the dots is:\u003C/p\u003E\r\n\u003Cul\u003E\r\n\u003Cli\u003Ered: adult males\u003C/li\u003E\r\n\u003Cli\u003Emagenta: subadult males\u003C/li\u003E\r\n\u003Cli\u003Ebrown: adult females\u003C/li\u003E\r\n\u003Cli\u003Eblue: juveniles\u003C/li\u003E\r\n\u003Cli\u003Egreen: pups\u003C/li\u003E\r\n\u003C/ul\u003E\r\n\u003Cp\u003EAn example\u00A0image from the training set is reproduced\u00A0below.\u003C/p\u003E\r\n\u003Cp\u003EGood luck!\u003C/p\u003E\r\n\u003Cp\u003E\u003Cimg src=\u0022https://storage.googleapis.com/kaggle-competitions/kaggle/6116/media/example_noaa_image.jpg\u0022 alt=\u0022Example NOAA data image\u0022 width=\u0022800\u0022 height=\u0022618\u0022 /\u003E\u003C/p\u003E","mimeType":"text/html","name":"data"},"competitionSlug":"noaa-fisheries-steller-sea-lion-population-count","numPrizes":3,"leaderboardPercentage":12,"discussion":{"dataUrl":"/forums/2998/topics.json","id":2998,"subscription":"UNSUBSCRIBE","paramValues":{"page":1,"group":"TOPIC_LIST_GROUP_ALL","sortBy":"TOPIC_LIST_SORT_BY_ACTIVE","category":"TOPIC_LIST_CATEGORY_ALL"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/thumb76_76.png","newTopic":{"allowAttachments":true,"authorType":"TOPIC","forumId":2998,"parentName":"NOAA Fisheries Steller Sea Lion Population Count","parentUrl":"/competitions/noaa-fisheries-steller-sea-lion-population-count/discussion"},"numScoredSubmissions":2,"maxDailySubmissions":5,"maxDailySubmissionsResetDate":"2022-08-05T00:00:00Z","totalSolutionRows":0,"team":{"id":6203412,"name":"nmroux","members":[{"userId":1658527,"displayName":"nmroux","userUrl":"/nmroux","avatarUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/default-thumb.png","isTeamLeader":true}]},"maxTeamSize":20,"totalCompetitors":463,"totalEntries":6015,"countsTowardsRanking":true,"countsTowardsTiers":true,"evaluationAlgorithm":{"id":24,"abbreviation":"MCRMSE","name":"Mean Columnwise Root Mean Squared Error","description":"Average of the RMSE of each column.","isPublic":true,"environmentRenderType":"ENVIRONMENT_RENDER_TYPE_JSON"},"allowPrivateLeaderboardDisplay":true,"pages":[{"id":16469,"postId":67885,"content":"\u003Cp\u003E\u003Cimg src=\u0022https://storage.googleapis.com/kaggle-competitions/kaggle/3333/media/noaa_sea_lions.png\u0022 alt=\u0022NOAA Stellar Sea Lions\u0022 style=\u0022float: right\u0022\u003E\u003C/p\u003E\n\u003Cp\u003ESteller sea lions in the western Aleutian Islands have declined 94 percent in the last 30 years. The endangered western population, found in the North Pacific, are the focus of conservation efforts which require annual population counts. Specially trained scientists at \u003Ca href=\u0022https://www.afsc.noaa.gov/\u0022 target=\u0022_blank\u0022\u003ENOAA Fisheries Alaska Fisheries Science Center\u003C/a\u003E conduct these surveys using airplanes and unoccupied aircraft systems to collect aerial images. Having accurate population estimates enables us to better understand factors that may be contributing to lack of recovery of Stellers in this area.\u003C/p\u003E\n\u003Cp\u003ECurrently, it takes biologists up to four months to count sea lions from the thousands of images NOAA Fisheries collects each year. Once individual counts are conducted, the tallies must be reconciled to confirm their reliability. The results of these counts are time-sensitive.\u003C/p\u003E\n\u003Cp\u003EIn this competition, Kagglers are invited to develop algorithms which accurately count the number of sea lions in aerial photographs. Automating the annual population count will free up critical resources allowing NOAA Fisheries to focus on ensuring we hear the sea lion\u2019s roar for many years to come. Plus, advancements in computer vision applied to aerial population counts may also greatly benefit other endangered species.\u003Cbr\u003E\f\u003C/p\u003E\n\u003Ch3\u003EResources\u003C/h3\u003E\n\u003Cp\u003ELearn more about research being done to better understand what\u0027s going on with the endangered Steller sea lion populations by joining scientists on a research vessel to the western Aleutian Islands in the video below.\u003C/p\u003E\n\u003Cp\u003E\u003C/p\u003E","mimeType":"text/html","name":"description","isPublished":true},{"id":16470,"postId":61203,"content":"\u003Cp\u003EThe aim of the competition is to count each type of steller sea lion in each photo. See the Data tab for more details.\u003C/p\u003E\n\u003Cp\u003EYour submission file should have the following format:\u003C/p\u003E\n\u003Cpre\u003Etest_id,adult_males,subadult_males,adult_females,juveniles,pups\u003Cbr\u003E0,1,1,1,1,1\u003Cbr\u003E1,1,1,1,1,1\u003Cbr\u003E2,1,1,1,1,1\u003Cbr\u003Eetc\u003C/pre\u003E\n\u003Cp\u003E\u003Cbr\u003EYour submissions will be evaluated by their \u003Ca href=\u0022https://www.kaggle.com/wiki/RootMeanSquaredError\u0022\u003ERMSE\u003C/a\u003E\u0026nbsp;from the human-labelled ground truth, averaged over the columns.\u003C/p\u003E","mimeType":"text/html","name":"evaluation","isPublished":true},{"id":16471,"postId":64628,"content":"\u003Cul\u003E\n\u003Cli\u003E1st place - $12,000\u003C/li\u003E\n\u003Cli\u003E2nd place - $8,000\u003C/li\u003E\n\u003Cli\u003E3rd place - $5,000\u003C/li\u003E\n\u003C/ul\u003E","mimeType":"text/html","name":"prizes","isPublished":true},{"id":16473,"postId":67527,"content":"\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 20, 2017\u003C/strong\u003E\u0026nbsp;-\u0026nbsp;Entry deadline. You must accept the competition rules before this date in order to compete.\u003C/li\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 20, 2017\u003C/strong\u003E\u0026nbsp;- Team Merger deadline. This is the last day participants\u0026nbsp;may join or merge teams.\u003C/li\u003E\n\u003Cli\u003E\u003Cstrong\u003EJune 27, 2017\u003C/strong\u003E\u0026nbsp;- Final submission deadline.\u003C/li\u003E\n\u003C/ul\u003E\n\u003Cp\u003EAll deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted. The competition organizers reserve the right to update the contest timeline if they deem it necessary.\u003C/p\u003E","mimeType":"text/html","name":"timeline","isPublished":true}],"databundleVersionId":46660,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":true,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","hasKernels":true,"hasSolutionFile":true,"userRankMultiplier":1,"rawDataUrl":"/c/6116/publicleaderboarddata.zip","mySubmissionsCount":0,"hostSegmentTitle":"Featured","canParticipate":true,"competitionHasLaunched":true,"competitionHasEnded":true,"ownerTwitter":"NOAA","externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/6116/logos/thumb76_76.png","competitionUrl":"/competitions/noaa-fisheries-steller-sea-lion-population-count","mergerDeadlineHasPassed":true,"categories":{"tags":[{"id":14102,"name":"image data","fullPath":"data type \u003E image data","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27image data%27","datasetCount":4126,"competitionCount":117,"notebookCount":4259,"tagUrl":"/tags/image-data","displayName":"Image Data"},{"id":7301,"name":"animals","fullPath":"subject \u003E earth and nature \u003E animals","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27animals%27","description":"The animals tag is as diverse as a rainforest. Is there a correlation between animal bites and NYC rat sightings? We\u0027re not sure. But the data is here and the world needs to know.","datasetCount":1035,"competitionCount":13,"notebookCount":860,"tagUrl":"/tags/animals","displayName":"Animals"},{"id":3003,"name":"water bodies","fullPath":"subject \u003E earth and nature \u003E environment \u003E water bodies","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27water bodies%27","description":"Lakes, oceans, rivers, streams, and infamous puddles.","datasetCount":57,"competitionCount":4,"notebookCount":68,"tagUrl":"/tags/bodies-of-water","displayName":"Water Bodies"},{"name":"mcrmse","description":"Average of the RMSE of each column."}],"type":"TAG_TYPE_COMPETITION"},"competitionHostClaims":{},"newEntrantDeadlineHasPassed":true,"rulesRequired":true,"modelFileSizeBytes":0,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat3"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div>
+
+
+
+    <!-- Cheers, web-7c68874cc7-66wqsp. -->
+
+  </main>
+
+
+
+<div class="sc-bjuIDw eQqGog sc-jWquRx NDjKp mdc-menu-surface"><div role="document"><div class="sc-dGHKFW jyQVuj"><div tabindex="0" class="sc-bAKPPm hBtDaB"><h5 class="sc-dIouRR sc-hHLeRK ipdnRD eZwBsd">No Active Events</h5><br><p class="sc-cxabCf sc-llJcti bGyNSd hMXWEN">Keep track of dataset uploads, competition submissions, scheduled notebooks, and running notebooks here.</p><br><div class="sc-jZiqTT ceMuuT"><a href="https://www.kaggle.com/code/welcome" target="_blank" tabindex="0" class="sc-hjriPb fROQMb"><button class="sc-gUAEMC cWQmIJ" tabindex="-1" role="button"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf iXgWvr">add</i><span class="sc-gXmSlM sc-cCsOjp cKhlzA piYDj">New Notebook</span></button></a><a href="https://www.kaggle.com/datasets/new" target="_blank" tabindex="0" class="sc-hjriPb fROQMb"><button class="sc-gUAEMC cWQmIJ" tabindex="-1" role="button"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKXOVf iXgWvr">add</i><span class="sc-gXmSlM sc-cCsOjp cKhlzA piYDj">New Dataset</span></button></a></div></div><ul class="km-list"><li class="sc-lbxAil bibdZV"><div class="sc-iNWwEs iYaBFN sc-jfdOKL hJVNPf"><a class="sc-ehmTmK hHEGzd"><div class="sc-jfmDQi jFmASs"><div class="sc-eKszNL fAfAuF"><div class="sc-hgZZql ioTANj"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-fjqEFS eKHDTL">auto_awesome_motion</i><div color="#FAE041" class="sc-lgVVsH kaNBLZ">0</div></div></div><div class="sc-iBkjds sc-fLlhyt sc-ckMVTt uVZhN izULIq fxTcSG"><p class="sc-cxabCf sc-llJcti ieLZFa hMXWEN">0 Active Events</p></div></div></a><div class="sc-lbOyJj duupuj"><i emphasis="high" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP">expand_more</i></div></div></li></ul></div></div></div><div aria-hidden="true" class="mdc-menu sc-hNKHps ipIOou mdc-menu-surface"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-gITdmR jTHIvj mdc-ripple-upgraded sc-gITdmR jTHIvj mdc-list-item"><div class="sc-fIavCj DfIAO"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKXOVf jWA-DLP sc-evrZIY elCeHP">bookmark_border</i><p class="sc-cxabCf sc-llJcti bGyNSd hMXWEN">Bookmark</p></div></div></div></div></body></html>
